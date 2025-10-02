@@ -1,0 +1,163 @@
+// Auto-generated from API - Do not edit manually
+// Last updated: 2025-09-27 17:38:32 UTC
+
+export const teamMembers = 
+[
+  {
+    "id": 14,
+    "type": "Volunteer",
+    "full_name": "Test User",
+    "title": null,
+    "socials": "",
+    "position": "Test Developer",
+    "image_url": null,
+    "bio": "",
+    "created_at": "2025-09-27T17:25:21.723Z",
+    "updated_at": "2025-09-27T17:25:21.723Z"
+  },
+  {
+    "id": 13,
+    "type": "Volunteer",
+    "full_name": "Aniket Chopade",
+    "title": null,
+    "socials": "",
+    "position": "Software Engineer",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993874/teams/1758993871395-Aniket.jpg.jpg",
+    "bio": "",
+    "created_at": "2025-09-27T17:24:34.678Z",
+    "updated_at": "2025-09-27T17:24:34.678Z"
+  },
+  {
+    "id": 12,
+    "type": "Volunteer",
+    "full_name": "Bupe Katongo",
+    "title": null,
+    "socials": "",
+    "position": "Web Developer",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993859/teams/1758993856728-Bupe.jpg.jpg",
+    "bio": "",
+    "created_at": "2025-09-27T17:24:19.788Z",
+    "updated_at": "2025-09-27T17:24:19.788Z"
+  },
+  {
+    "id": 11,
+    "type": "Team Member",
+    "full_name": "Ange Arsene Ossiala",
+    "title": null,
+    "socials": "",
+    "position": "Country Representative- Congo Brazzaville",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993821/teams/1758993818926-Ange%20Arsene%20Ossiala.jpg.jpg",
+    "bio": "",
+    "created_at": "2025-09-27T17:23:42.091Z",
+    "updated_at": "2025-09-27T17:23:42.091Z"
+  },
+  {
+    "id": 10,
+    "type": "Team Member",
+    "full_name": "Siyana Zulu",
+    "title": null,
+    "socials": "",
+    "position": "Finance Manager",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993806/teams/1758993803295-Siyana%20zulu.jpg.jpg",
+    "bio": "",
+    "created_at": "2025-09-27T17:23:26.519Z",
+    "updated_at": "2025-09-27T17:23:26.519Z"
+  },
+  {
+    "id": 9,
+    "type": "Team Member",
+    "full_name": "Talent Madubeka",
+    "title": null,
+    "socials": "",
+    "position": "Sustainable Livelihoods Officer",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993792/teams/1758993790266-Talent%20Madubeka.jpg.jpg",
+    "bio": "",
+    "created_at": "2025-09-27T17:23:13.135Z",
+    "updated_at": "2025-09-27T17:23:13.135Z"
+  },
+  {
+    "id": 8,
+    "type": "Team Member",
+    "full_name": "Temwa Gondwe",
+    "title": null,
+    "socials": "",
+    "position": "Advocacy & Communication Officer",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993783/teams/1758993781321-Temwa%20Gondwe.jpg.jpg",
+    "bio": "",
+    "created_at": "2025-09-27T17:23:04.047Z",
+    "updated_at": "2025-09-27T17:23:04.047Z"
+  },
+  {
+    "id": 7,
+    "type": "Team Member",
+    "full_name": "Isaiah Mwanza",
+    "title": null,
+    "socials": "",
+    "position": "Director of Projects",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993769/teams/1758993767046-Isaiah%20Mwanza.jpg.png",
+    "bio": "",
+    "created_at": "2025-09-27T17:22:50.310Z",
+    "updated_at": "2025-09-27T17:22:50.310Z"
+  },
+  {
+    "id": 6,
+    "type": "Team Member",
+    "full_name": "Rodney Katongo",
+    "title": null,
+    "socials": "",
+    "position": "Co-Founder & Chief Executive Officer",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993756/teams/1758993753606-Rodney%20Katongo.jpg.png",
+    "bio": "",
+    "created_at": "2025-09-27T17:22:36.791Z",
+    "updated_at": "2025-09-27T17:22:36.791Z"
+  },
+  {
+    "id": 5,
+    "type": "Board Member",
+    "full_name": "Anna Butler",
+    "title": null,
+    "socials": "",
+    "position": "Global Networks & Partnerships Advisor",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993739/teams/1758993737104-Anna%20Butler.png.png",
+    "bio": "Anna is a Harvard Scholar with extensive experience in sustainable social programming, equitable education access, and global protection policies",
+    "created_at": "2025-09-27T17:22:20.580Z",
+    "updated_at": "2025-09-27T17:22:20.580Z"
+  },
+  {
+    "id": 4,
+    "type": "Board Member",
+    "full_name": "Maurice Dillon",
+    "title": null,
+    "socials": "",
+    "position": "Finance & Resource Mobilisation",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993724/teams/1758993721849-Maurica%20dillon.png.png",
+    "bio": "Maurice is a Master of Laws and is a member of the Royal Institute of British Architects. He has delivered numerous major projects throughout Middle East, Africa and Europe. He brings with him a wealth of experience in economic development as well as best-practice in sustainable development",
+    "created_at": "2025-09-27T17:22:04.880Z",
+    "updated_at": "2025-09-27T17:22:04.880Z"
+  },
+  {
+    "id": 3,
+    "type": "Board Member",
+    "full_name": "Paul Kapanda",
+    "title": null,
+    "socials": "",
+    "position": "Co-founder & Co-Chairman",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993697/teams/1758993695051-Paul%20Kapanda.png.png",
+    "bio": "Paul is the Co-founder & Co-Chairman of Africa Access Water, he has more than 20 years of experience in water systems and business management",
+    "created_at": "2025-09-27T17:21:38.059Z",
+    "updated_at": "2025-09-27T17:21:38.059Z"
+  },
+  {
+    "id": 2,
+    "type": "Board Member",
+    "full_name": "Reuben Banda",
+    "title": null,
+    "socials": "",
+    "position": "Chairman",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993624/teams/1758993621820-Reuben%20Band.png.png",
+    "bio": "Reuben is the Managing Director and Co-Founder of Musika Development Limited, one of the biggest organisations in Zambia. He has more than 20 years of experience in Agribusiness and market systems",
+    "created_at": "2025-09-27T17:20:25.063Z",
+    "updated_at": "2025-09-27T17:20:25.063Z"
+  }
+]
+;
