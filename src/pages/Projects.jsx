@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import { TbFileText } from "react-icons/tb";
 import Header from "../components/Header";
 
-const PRODUCTION_API_BASE = "https://afaw-beta-api.onrender.com/api";
+const PRODUCTION_API_BASE = "https://afaw-api-v1.onrender.com/api";
 const LOCAL_API_BASE = "http://localhost:5000/api";
 const API_BASE = PRODUCTION_API_BASE;
 
