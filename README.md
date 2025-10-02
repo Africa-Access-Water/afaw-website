@@ -19,44 +19,6 @@ Africa Access Water builds solar-powered water infrastructure to improve food se
 - **Build Tool**: Create React App
 - **Deployment**: Vercel
 
-## 📁 Project Structure
-
-```
-afaw-beta-website/
-├── public/                     # Static assets
-│   ├── css/                   # Stylesheets
-│   ├── img/                   # Images and media files
-│   │   ├── logos/            # Brand logos
-│   │   ├── partners/         # Partner logos
-│   │   ├── payments/         # Payment method icons
-│   │   └── projects/         # Project images
-│   ├── js/                   # JavaScript libraries
-│   ├── lib/                  # Third-party libraries
-│   └── docs/                 # PDF documents
-├── src/                      # Source code
-│   ├── components/           # Reusable React components
-│   │   ├── About.jsx
-│   │   ├── Carousel.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Header.jsx
-│   │   ├── Layout.jsx
-│   │   ├── Navbar.jsx
-│   │   └── ...
-│   ├── pages/               # Page components
-│   │   ├── Home.jsx
-│   │   ├── Donate.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Team.jsx
-│   │   └── Posts.jsx
-│   ├── data/               # Static data files
-│   │   ├── teamData.js
-│   │   ├── causesData.js
-│   │   └── postsData.js
-│   ├── styles/             # Component-specific styles
-│   └── App.js              # Main application component
-└── package.json            # Dependencies and scripts
-```
-
 ## 🏃‍♂️ Getting Started
 
 ### Prerequisites
