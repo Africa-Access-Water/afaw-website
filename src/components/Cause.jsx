@@ -42,7 +42,7 @@ const Cause = ({ delay, title, desc, goal, raised, tag, img, alt }) => {
                 objectPosition: "center"
           }}/>
           <div className="causes-overlay">
-            <a className="btn btn-outline-primary" href="#">
+            <a className="btn btn-outline-primary" href="/donate">
               Read More
               <div className="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                 <i className="fa fa-arrow-right"></i>

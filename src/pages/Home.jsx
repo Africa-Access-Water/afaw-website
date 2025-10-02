@@ -12,7 +12,7 @@ import Objectives from "../components/Objectives";
 
 function Home() {
 
-    const PRODUCTION_API_BASE = "https://afaw-beta-api.onrender.com/api/";
+    const PRODUCTION_API_BASE = "https://afaw-beta-api.onrender.com/api";
     const LOCAL_API_BASE = "http://localhost:5000/api";
     const API_BASE = PRODUCTION_API_BASE; // switch to LOCAL_API_BASE for local dev
 
