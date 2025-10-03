@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
+import CONFIG from "../config";
+
+const API_BASE = CONFIG.apiBaseUrl;
 
 const Donate = () => {
-  const PRODUCTION_API_BASE = "https://afaw-beta-api.onrender.com/api";
-  const LOCAL_API_BASE = "http://localhost:5000/api";
-  const API_BASE = PRODUCTION_API_BASE;
-
   const [projects, setProjects] = useState([]);
   const [selectedProjectId, setSelectedProjectId] = useState("1");
   const [selectedProject, setSelectedProject] = useState(null);
@@ -23,7 +22,7 @@ const Donate = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch(`${API_BASE}/projects`);
+        const res = await fetch(`${API_BASE}/api/projects`);
         const data = await res.json();
         if (Array.isArray(data)) setProjects(data);
       } catch (err) {
@@ -79,8 +78,8 @@ const Donate = () => {
     try {
       const endpoint =
         data.donation_type === "recurring"
-          ? `${API_BASE}/donations/subscribe`
-          : `${API_BASE}/donations/donate`;
+          ? `${API_BASE}/api/donations/subscribe`
+          : `${API_BASE}/api/donations/donate`;
 
       const res = await fetch(endpoint, {
         method: "POST",

@@ -4,25 +4,22 @@ import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
 import Carousel from "../components/Carousel";
 import VisionMission from "../components/VisionMission ";
-
+import CONFIG from "../config";
 import Stat from '../components/Stat';
 import Cause from '../components/Cause';
 import About from '../components/About';
 import Objectives from "../components/Objectives";
 
+const API_BASE = CONFIG.apiBaseUrl;
+
 function Home() {
-
-    const PRODUCTION_API_BASE = "https://afaw-beta-api.onrender.com/api";
-    const LOCAL_API_BASE = "http://localhost:5000/api";
-    const API_BASE = PRODUCTION_API_BASE; // switch to LOCAL_API_BASE for local dev
-
     const [projects, setProjects] = useState([]);
 
     // Fetch projects from API
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const res = await fetch(`${API_BASE}/projects`);
+                const res = await fetch(`${API_BASE}/api/projects`);
                 const data = await res.json();
                 if (Array.isArray(data)) setProjects(data);
             } catch (err) {
