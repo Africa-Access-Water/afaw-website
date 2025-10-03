@@ -434,7 +434,7 @@ const Donate = () => {
                         >
                           <option value="">Donation Type</option>
                           <option value="one_time">One Time</option>
-                          <option value="recurring">Recurring</option>
+                          <option value="recurring" disabled>Recurring</option>
                         </select>
                       </div>
                       <div className="col-sm-6">
