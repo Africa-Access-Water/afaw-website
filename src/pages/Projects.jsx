@@ -4,10 +4,9 @@ import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
 import { TbFileText } from "react-icons/tb";
 import Header from "../components/Header";
+import CONFIG from "../config";
 
-const PRODUCTION_API_BASE = "https://afaw-api-v1.onrender.com/api";
-const LOCAL_API_BASE = "http://localhost:5000/api";
-const API_BASE = PRODUCTION_API_BASE;
+const API_BASE = CONFIG.apiBaseUrl;
 
 function Projects() {
     const [projects, setProjects] = useState([]);
@@ -16,7 +15,7 @@ function Projects() {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const res = await fetch(`${API_BASE}/projects`);
+                const res = await fetch(`${API_BASE}/api/projects`);
                 const data = await res.json();
                 if (Array.isArray(data)) setProjects(data);
             } catch (err) {

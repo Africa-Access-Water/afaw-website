@@ -3,10 +3,9 @@ import { useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
 import ShareButton from "../components/ShareButton";
+import CONFIG from "../config";
 
-const PRODUCTION_API_BASE = "https://afaw-beta-api.onrender.com/api";
-const LOCAL_API_BASE = "http://localhost:5000/api";
-const API_BASE = PRODUCTION_API_BASE;
+const API_BASE = CONFIG.apiBaseUrl;
 
 const SuccessPage = () => {
   const [searchParams] = useSearchParams();
@@ -17,7 +16,7 @@ const SuccessPage = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch(`${API_BASE}/projects`);
+        const res = await fetch(`${API_BASE}/api/projects`);
         const data = await res.json();
         if (Array.isArray(data)) {
           setProjects(data);
