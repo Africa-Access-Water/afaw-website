@@ -9,6 +9,7 @@ import Stat from '../components/Stat';
 import Cause from '../components/Cause';
 import About from '../components/About';
 import Objectives from "../components/Objectives";
+import Sponsors from "../components/Sponsors";
 
 const API_BASE = CONFIG.apiBaseUrl;
 
@@ -76,7 +77,7 @@ function Home() {
                         <div className="row g-4 justify-content-center align-items-stretch">
                             <Stat icon="fa fa-solar-panel" number="9" text="Solar-powered water infrastructure in 4 project sites" />
                             <Stat icon="fa fa-users" number="6,000" text="Households food secure with income" />
-                            <Stat icon="fa-tint" number="30,000" text="People & 2,500 animals with clean drinking water" />
+                            <Stat icon="fa fa-tint" number="30,000" text="People & 2,500 animals with clean drinking water" />
                             <Stat icon="fa fa-dollar-sign" number="190,000" text="US$ annually communities' income from produce" />
                         </div>
                     </div>
@@ -92,7 +93,8 @@ function Home() {
                         </div>
                     </div>
                 </div>
-
+                
+                {/* Projects Section */}
                 <div className="container-xxl bg-light my-5 py-5">
                     <div className="container py-5">
                         <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: '600px' }}>
@@ -123,6 +125,9 @@ function Home() {
                         </div>
                     </div>
                 </div>
+
+                {/* Sponsors Section */}
+                <Sponsors />
             </Layout>
         </>
     );
