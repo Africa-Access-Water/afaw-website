@@ -149,7 +149,7 @@ const Sponsors = ({ sponsors = [] }) => {
                 }
                 
                 .certification-text {
-                    font-size: 1.5rem;
+                    font-size: 2rem;
                     font-weight: 600;
                     color: #4285f4;
                     margin: 0;

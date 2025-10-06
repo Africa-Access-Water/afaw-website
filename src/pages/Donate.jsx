@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
-import Header from "../components/Header";
 import CONFIG from "../config";
 
 const API_BASE = CONFIG.apiBaseUrl;
@@ -130,10 +129,11 @@ const Donate = () => {
       </Helmet>
 
       <Layout>
-        <Header title="Donate" current="donate" />
+        {/* Spacer to prevent navbar overlap */}
+        <div style={{ paddingTop: '130px', backgroundColor: '#001d23' }}></div>
 
         <div
-          className="container-fluid donate my-5 py-5"
+          className="container-fluid donate mb-5 py-5"
           style={{
             backgroundImage: `url('img/pipe.jpg')`,
             backgroundAttachment: "fixed",
