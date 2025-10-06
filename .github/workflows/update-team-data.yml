@@ -30,7 +30,7 @@ jobs:
           echo "Fetching team data from API..."
           
           # Fetch data with timeout and error handling
-          response=$(curl -s -w "%{http_code}" -o teamData.json --max-time 30 https://afaw-beta-api.onrender.com/api/teams)
+          response=$(curl -s -w "%{http_code}" -o teamData.json --max-time 30 https://afaw-api-v2.onrender.com/api/teams)
           http_code="${response: -3}"
           
           if [ "$http_code" != "200" ]; then
@@ -98,7 +98,7 @@ jobs:
             
             **Changes:**
             - Updated team member information
-            - Data fetched from: https://afaw-beta-api.onrender.com/api/teams
+            - Data fetched from: https://afaw-api-v2.onrender.com/api/teams/api/teams
             - Team members count: ${{ steps.fetch-data.outputs.data_count }}
             
             **Generated:** ${{ github.event_name == 'workflow_dispatch' && 'Manual trigger' || 'Scheduled update' }}
