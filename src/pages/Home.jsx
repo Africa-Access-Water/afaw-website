@@ -46,7 +46,7 @@ function Home() {
                     <Carousel
                         slides={[
                             {
-                                img: "img/hero.jpg",
+                                img: "img/corousal1-2.jpeg",
                                 alt: "Rural Community with Water System",
                                 title: "Empowering Africa Through Water",
                                 desc:
