@@ -47,7 +47,7 @@ function Home() {
                     <Carousel
                         slides={[
                             {
-                                img: "img/corousal1-2.jpeg",
+                                img: "img/hero1-1.jpg",
                                 alt: "Rural Community with Water System",
                                 title: "Empowering Africa Through Water",
                                 desc:
@@ -55,15 +55,16 @@ function Home() {
                                 buttonText: "Donate Now",
                                 buttonLink: "/donate",
                             },
-                            {
-                                img: "img/about.jpg",
-                                alt: "Women Empowerment in Agriculture",
-                                title: "Water is Life. Empowerment is Impact.",
-                                desc:
-                                    "Join us in empowering women, youth, and farmers with clean water for agriculture and economic independence.",
-                                buttonText: "Donate Now",
-                                buttonLink: "/donate",
-                            },
+                            // ###Only one item on corousal needed for now
+                            // {
+                            //     img: "img/about.jpg",
+                            //     alt: "Women Empowerment in Agriculture",
+                            //     title: "Water is Life. Empowerment is Impact.",
+                            //     desc:
+                            //         "Join us in empowering women, youth, and farmers with clean water for agriculture and economic independence.",
+                            //     buttonText: "Donate Now",
+                            //     buttonLink: "/donate",
+                            // },
                         ]}
                     />
                 </section>

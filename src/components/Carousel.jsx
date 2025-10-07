@@ -95,6 +95,10 @@ const Carousel = ({ slides, id = "header-carousel" }) => (
         ))}
       </div>
       {/* Controls */}
+
+      {/* Only show controls if more than one slide */}
+      {slides.length > 1 && (
+      <>
       <button
         className="carousel-control-prev"
         type="button"
@@ -112,7 +116,8 @@ const Carousel = ({ slides, id = "header-carousel" }) => (
       >
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
-      </button>
+      </button> 
+      </>)}
     </div>
   </div>
 );

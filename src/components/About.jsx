@@ -27,7 +27,7 @@ const About = ({ image, smallImage, title, quote, description, buttons }) => {
                     security, increase income, and build resilience to climate change. Our programs empower
                     women, youth, and farmers across Zambia and beyond.
                 </p>
-                <a className="btn btn-primary py-2 px-3 me-3" href="about.html">
+                <a className="btn btn-primary py-2 px-3 me-3" href="/about">
                     Learn More
                     <div className="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                         <i className="fa fa-arrow-right"></i>
