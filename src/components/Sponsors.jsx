@@ -9,6 +9,10 @@ const Sponsors = ({ sponsors = [] }) => {
         { id: 4, name: "Sponsor 4", logo: "/img/sponsor4.png" },
         { id: 5, name: "Sponsor 5", logo: "/img/sponsor5.png" },
         { id: 6, name: "Sponsor 6", logo: "/img/sponsor6.png" },
+        { id: 7, name: "Sponsor 7", logo: "/img/sponsor7.png" },
+        { id: 8, name: "Sponsor 8", logo: "/img/sponsor8.png" },
+        { id: 9, name: "Sponsor 9", logo: "/img/sponsor9.png" },
+        { id: 10, name: "Sponsor 10", logo: "/img/sponsor10.png" },
     ];
 
     const sponsorList = sponsors.length > 0 ? sponsors : defaultSponsors;
