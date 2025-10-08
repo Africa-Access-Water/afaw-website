@@ -9,7 +9,14 @@ import Milestones2024 from "../components/Milestones2024";
 function AboutPage() {
   return (
     <Layout title="About Us - Africa Access Water">
-      <Header title="About Us" current="About" />
+      {/* Spacer to prevent navbar overlap */}
+        <div
+          style={{
+            paddingTop: window.innerWidth < 768 ? '95px' : '130px',
+            backgroundColor: '#001d23',
+          }}
+        > 
+        </div>
 
       {/* How It Works Section */}
       <HowItWorks />

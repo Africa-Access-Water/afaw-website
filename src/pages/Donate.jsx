@@ -130,7 +130,13 @@ const Donate = () => {
 
       <Layout>
         {/* Spacer to prevent navbar overlap */}
-        <div style={{ paddingTop: '130px', backgroundColor: '#001d23' }}></div>
+        <div
+          style={{
+            paddingTop: window.innerWidth < 768 ? '95px' : '130px',
+            backgroundColor: '#001d23',
+          }}
+        > 
+        </div>
 
         <div
           className="container-fluid donate mb-5 py-5"

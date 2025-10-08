@@ -65,7 +65,14 @@ const Contact = () => {
         <meta property="og:url" content={window.location.href} />
       </Helmet>
       <Layout>
-        <Header title="Contact" current="contact" />
+        {/* Spacer to prevent navbar overlap */}
+        <div
+          style={{
+            paddingTop: window.innerWidth < 768 ? '95px' : '130px',
+            backgroundColor: '#001d23',
+          }}
+        > 
+        </div>
         <div className="container-xxl py-5 bg-light">
           <div className="container">
             <div className="row g-5 align-items-center">

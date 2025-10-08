@@ -44,9 +44,16 @@ function Projects() {
             </Helmet>
 
             <Layout>
-                <Header title="Projects" current="projects" />
+                {/* Spacer to prevent navbar overlap */}
+                <div
+                  style={{
+                    paddingTop: window.innerWidth < 768 ? '95px' : '130px',
+                    backgroundColor: '#001d23',
+                  }}
+                > 
+                </div>
 
-                <div className="container-xxl bg-light my-5 py-5">
+                <div className="container-xxl mb-5 pb-5">
                     <div className="container py-5">
                         <div
                             className="text-center mx-auto mb-5"

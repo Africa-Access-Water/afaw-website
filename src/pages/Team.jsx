@@ -25,7 +25,14 @@ const Team = () => {
 
   return (
     <Layout title="Our Team - Africa Access Water">
-      <Header title="Our Team" current="team" />
+      {/* Spacer to prevent navbar overlap */}
+        <div
+          style={{
+            paddingTop: window.innerWidth < 768 ? '95px' : '130px',
+            backgroundColor: '#001d23',
+          }}
+        > 
+        </div>
 
       {/* Our Board Members */}
       <div className="container-xxl mt-5">
