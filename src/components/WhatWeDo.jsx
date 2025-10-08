@@ -158,11 +158,11 @@ const WhatWeDo = () => {
     ];
 
     return (
-        <div className="container-xxl pb-5">
+        <div className="container-xxl py-5">
             <div className="container">
                 {/* Section Header */}
                 <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: '600px' }}>
-                    <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Impact</div>
+                    {/* <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Impact</div> */}
                     <h1 className="display-5 mb-4 fw-bold text-dark">What We Do</h1>
                     <p className="text-muted fs-5">
                         Discover how we empower communities through sustainable water solutions, 

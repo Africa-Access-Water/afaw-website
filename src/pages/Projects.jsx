@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import { TbFileText } from "react-icons/tb";
 import Header from "../components/Header";
 import CONFIG from "../config";
+import WhatWeDo from "../components/WhatWeDo";
 
 const API_BASE = CONFIG.apiBaseUrl;
 
@@ -195,6 +196,9 @@ function Projects() {
                                 })
                             )}
                         </div>
+
+                        {/* What We Do Section */}
+                        <WhatWeDo />
                     </div>
                 </div>
 

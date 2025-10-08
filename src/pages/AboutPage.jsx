@@ -11,9 +11,6 @@ function AboutPage() {
     <Layout title="About Us - Africa Access Water">
       <Header title="About Us" current="About" />
 
-      {/* What We Do Section */}
-      <WhatWeDo />
-
       {/* How It Works Section */}
       <HowItWorks />
 

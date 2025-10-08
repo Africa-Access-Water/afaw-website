@@ -35,7 +35,7 @@ const Milestones2024 = () => {
                             </div>
                             <h3>Water Economy Dialogue</h3>
                             <p>Hosted the inaugural Water Economy Dialogue, fostering collaboration among 25 stakeholders
-                                for sustainable water resource&nbsp;management.</p>
+                                for sustainable water resource management.</p>
                         </div>
                         {/* End Single Milestone */}
                     </div>
@@ -47,7 +47,7 @@ const Milestones2024 = () => {
                             </div>
                             <h3>Women Empowerment</h3>
                             <p>Supported at least 200 women having savings groups, enabling financial resilience and
-                                entrepreneurial activities&nbsp;in&nbsp;rural&nbsp;areas.</p>
+                                entrepreneurial activities in rural areas.</p>
                         </div>
                         {/* End Single Milestone */}
                     </div>
@@ -59,7 +59,7 @@ const Milestones2024 = () => {
                             </div>
                             <h3>Youth Engagement</h3>
                             <p>Trained at least 50 young people in water and solar systems maintenance and sustainable
-                                agricultural&nbsp;skills.</p>
+                                agricultural skills.</p>
                         </div>
                         {/* End Single Milestone */}
                     </div>
