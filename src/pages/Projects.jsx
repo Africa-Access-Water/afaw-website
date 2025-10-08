@@ -203,9 +203,6 @@ function Projects() {
                                 })
                             )}
                         </div>
-
-                        {/* What We Do Section */}
-                        <WhatWeDo />
                     </div>
                 </div>
 

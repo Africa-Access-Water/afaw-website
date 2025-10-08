@@ -17,7 +17,10 @@ function AboutPage() {
           }}
         > 
         </div>
-
+      
+      {/* What We Do Section */}
+      <WhatWeDo />
+      
       {/* How It Works Section */}
       <HowItWorks />
 

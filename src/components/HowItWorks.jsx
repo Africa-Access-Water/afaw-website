@@ -2,11 +2,11 @@ import React from 'react';
 
 const HowItWorks = () => {
     return (
-        <div className="container-xxl py-5">
+        <div className="container-xxl pb-5">
             <div className="container">
                 {/* Section Header */}
                 <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Process</div>
+                    {/* <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Process</div> */}
                     <h1 className="display-5 mb-4 fw-bold text-dark">How It Works</h1>
                 </div>
 
