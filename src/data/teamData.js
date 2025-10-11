@@ -1,43 +1,31 @@
 // Auto-generated from API - Do not edit manually
-// Last updated: 2025-09-27 17:38:32 UTC
+// Last updated: 2025-10-11 23:58:25 UTC
 
 export const teamMembers = 
 [
   {
-    "id": 14,
+    "id": 1,
     "type": "Volunteer",
-    "full_name": "Test User",
+    "full_name": "Bupe Katongo",
     "title": null,
-    "socials": "",
-    "position": "Test Developer",
-    "image_url": null,
-    "bio": "",
-    "created_at": "2025-09-27T17:25:21.723Z",
-    "updated_at": "2025-09-27T17:25:21.723Z"
+    "socials": "www.linkedin.com/in/6upe",
+    "position": "Software Engineer",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1759574116/teams/1759574115943-WhatsApp%20Image%202025-10-04%20at%2012.30.49_89dae985.jpg.jpg",
+    "bio": "I have a passion for blending creativity with technical expertise to develop innovative software solutions and captivating visual designs.",
+    "created_at": "2025-10-04T10:34:27.020Z",
+    "updated_at": "2025-10-04T10:34:27.020Z"
   },
   {
-    "id": 13,
+    "id": 12,
     "type": "Volunteer",
     "full_name": "Aniket Chopade",
     "title": null,
     "socials": "",
     "position": "Software Engineer",
-    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993874/teams/1758993871395-Aniket.jpg.jpg",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1759345317/teams/1759345314196-Aniket.jpg.jpg",
     "bio": "",
     "created_at": "2025-09-27T17:24:34.678Z",
     "updated_at": "2025-09-27T17:24:34.678Z"
-  },
-  {
-    "id": 12,
-    "type": "Volunteer",
-    "full_name": "Bupe Katongo",
-    "title": null,
-    "socials": "",
-    "position": "Web Developer",
-    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1758993859/teams/1758993856728-Bupe.jpg.jpg",
-    "bio": "",
-    "created_at": "2025-09-27T17:24:19.788Z",
-    "updated_at": "2025-09-27T17:24:19.788Z"
   },
   {
     "id": 11,
