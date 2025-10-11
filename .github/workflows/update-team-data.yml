@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ github.token }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -88,7 +88,7 @@ jobs:
         if: steps.check-changes.outputs.has_changes == 'true'
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ github.token }}
           commit-message: "🤖 Update team data from API"
           title: "🤖 Auto-update team data"
           body: |
