@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout";
-import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 import ShareButton from "../components/ShareButton";
 import CONFIG from "../config";
 
@@ -35,8 +35,31 @@ const SuccessPage = () => {
 
   return (
     <>
-      <Navbar current="donation-success" />
+       <Helmet>
+        <title>Posts | Africa Access Water</title>
+        <meta
+          name="description"
+          content="Support our clean water projects through your generous donations."
+        />
+        <meta property="og:title" content="Donate to Africa Access Water" />
+        <meta
+          property="og:description"
+          content="Your support brings clean, safe water to those in need."
+        />
+        <meta property="og:image" content="/images/og-donate.jpg" />
+        <meta property="og:url" content={window.location.href} />
+      </Helmet>
+
       <Layout title="Donation Success - Africa Access Water">
+        {/* Spacer to prevent navbar overlap */}
+        <div
+          style={{
+            paddingTop: window.innerWidth < 768 ? '95px' : '130px',
+            backgroundColor: '#001d23',
+          }}
+        >
+        </div>
+
         {/* Hero Section */}
         <section className="position-relative text-white text-center">
           <img
@@ -85,9 +108,8 @@ const SuccessPage = () => {
                 className="progress-bar bg-success"
                 role="progressbar"
                 style={{
-                  width: `${
-                    (project.donation_raised / project.donation_goal) * 100
-                  }%`,
+                  width: `${(project.donation_raised / project.donation_goal) * 100
+                    }%`,
                 }}
                 aria-valuenow={project.donation_raised}
                 aria-valuemin="0"
@@ -104,6 +126,7 @@ const SuccessPage = () => {
         )}
 
         {/* Stories Section */}
+        {/* Stories Section */}
         <section className="py-5" style={{ backgroundColor: "#f0f8ff" }}>
           <div className="container">
             <h2 className="text-center fw-bold mb-5">Because of You</h2>
@@ -111,23 +134,23 @@ const SuccessPage = () => {
               {[
                 {
                   img: "/img/carousel-1.jpg",
-                  text: "“Now I can go to school instead of fetching water.”",
-                  author: "Mustapha, 13",
+                  text: "“My children no longer walk long distances for water. They are healthier, and I have time to farm and care for my family. AfAW has given us life and dignity back.”",
+                  author: "A Mother’s Voice",
                 },
                 {
                   img: "/img/potato.jpg",
-                  text: "“Our crops will grow even in the dry season.”",
-                  author: "Joseph, Farmer",
+                  text: "“With solar irrigation, I now farm all year and sell my produce at the market. I am not just a farmer — I am a businesswoman. AfAW has empowered us women to stand on our own feet.”",
+                  author: "A Young Woman Farmer",
                 },
                 {
                   img: "/img/about1.jpg",
-                  text: "“I can spend more time learning instead of fetching water.”",
-                  author: "Mary, Student",
+                  text: "“AfAW gave us more than water. They trained us to sustain it, and now we have clean water, better harvests, and small businesses. They brought hope for a better future.”",
+                  author: "Community Leader",
                 },
                 {
                   img: "/img/irrigated 1.jpg",
-                  text: "“Clean water means a healthier family.”",
-                  author: "Sarah, Mother",
+                  text: "“I never thought I’d see clean water here in my lifetime. Now I fetch it near my home, and my grandchildren grow up healthy. AfAW has truly blessed our community.”",
+                  author: "A Grandmother’s Reflection",
                 },
               ].map((story, index) => (
                 <div className="col-md-6 col-lg-3" key={index}>
@@ -156,6 +179,7 @@ const SuccessPage = () => {
             </div>
           </div>
         </section>
+
 
         {/* Next Step */}
         <section className="container text-center py-5">
