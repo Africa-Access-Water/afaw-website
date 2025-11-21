@@ -1,8 +1,44 @@
 // Auto-generated from API - Do not edit manually
-// Last updated: 2025-11-12 13:04:54 UTC
+// Last updated: 2025-11-21 17:43:02 UTC
 
 export const teamMembers = 
 [
+  {
+    "id": 17,
+    "type": "Board Member",
+    "full_name": "Richard Gleason",
+    "title": null,
+    "socials": "",
+    "position": "Board Secratary",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1763746765/teams/1763746765121-image%20%281%29%20-%20Richard%20Gleason.png.png",
+    "bio": "",
+    "created_at": "2025-11-21T17:39:26.105Z",
+    "updated_at": "2025-11-21T17:39:26.105Z"
+  },
+  {
+    "id": 16,
+    "type": "Team Member",
+    "full_name": "Nic Daphnet Ossiala Elonda",
+    "title": null,
+    "socials": "",
+    "position": "Administrative officer",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1763746722/teams/1763746721802-IMG_7519%20-%20A%20O.%20E..jpeg.jpg",
+    "bio": "",
+    "created_at": "2025-11-21T17:38:43.602Z",
+    "updated_at": "2025-11-21T17:38:43.602Z"
+  },
+  {
+    "id": 15,
+    "type": "Board Member",
+    "full_name": "Jacob Nkowane",
+    "title": null,
+    "socials": "",
+    "position": "Board Trustee",
+    "image_url": "https://res.cloudinary.com/dz3tgvaiw/image/upload/v1763746621/teams/1763746621319-886%20-%20Jacob%20Nkowane.jpeg.jpg",
+    "bio": "",
+    "created_at": "2025-11-21T17:37:02.447Z",
+    "updated_at": "2025-11-21T17:37:02.447Z"
+  },
   {
     "id": 14,
     "type": "Volunteer",
