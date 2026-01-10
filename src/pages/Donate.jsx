@@ -7,6 +7,32 @@ import { extractIdFromSlug, createSlugWithId } from "../utils/slugify";
 
 const API_BASE = CONFIG.apiBaseUrl;
 
+// <-- ADDED: Country to Currency Map
+const countryToCurrency = {
+  US: "USD",
+  GB: "GBP",
+  ZM: "ZMW",
+  CA: "CAD",
+  AU: "AUD",
+  FR: "EUR",
+  DE: "EUR",
+  NG: "NGN",
+  KE: "KES",
+  // Add more countries as needed
+};
+
+// <-- ADDED: Currency Symbols Map
+const currencySymbols = {
+  USD: "$",
+  GBP: "£",
+  ZMW: "ZK",
+  CAD: "C$",
+  AUD: "A$",
+  EUR: "€",
+  NGN: "₦",
+  KES: "KSh",
+};
+
 const Donate = () => {
   const { projectSlug } = useParams();
   const navigate = useNavigate();
@@ -20,6 +46,24 @@ const Donate = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [donationType, setDonationType] = useState("recurring");
 
+  // <-- CHANGED: Currency state
+  const [currency, setCurrency] = useState("USD");
+
+  // <-- ADDED: Detect user location and set default currency
+  useEffect(() => {
+    const setCurrencyByLocation = () => {
+      try {
+        const locale = navigator.language || "en-US"; // e.g., "en-GB"
+        const region = locale.split("-")[1]; // Extract country code
+        setCurrency(countryToCurrency[region] || "USD");
+      } catch (err) {
+        console.error("Could not determine location:", err);
+        setCurrency("USD");
+      }
+    };
+    setCurrencyByLocation();
+  }, []);
+
   // Fetch projects
   useEffect(() => {
     const fetchProjects = async () => {
@@ -28,14 +72,12 @@ const Donate = () => {
         const data = await res.json();
         if (Array.isArray(data)) setProjects(data);
 
-        // Extract project ID from URL slug if present (e.g., /donate/solar-water-system-5)
         const projectIdFromSlug = projectSlug ? extractIdFromSlug(projectSlug) : null;
         const hasProject = projectIdFromSlug && data.some((proj) => proj.id === projectIdFromSlug);
 
         if (hasProject) {
           setSelectedProjectId(String(projectIdFromSlug));
         } else if (!projectSlug) {
-          // Only set default if no project slug in URL (general donation)
           const defaultProjectId = "1";
           const hasDefault = data.some((proj) => String(proj.id) === defaultProjectId);
           if (hasDefault) setSelectedProjectId(defaultProjectId);
@@ -51,7 +93,7 @@ const Donate = () => {
   useEffect(() => {
     const proj = projects.find((p) => String(p.id) === selectedProjectId);
     setSelectedProject(proj || null);
-    setCurrentMediaIndex(0); // Reset slider
+    setCurrentMediaIndex(0);
   }, [selectedProjectId, projects]);
 
   // Validate and redirect to canonical URL if slug doesn't match
@@ -65,33 +107,15 @@ const Donate = () => {
     }
   }, [selectedProject, projectSlug, navigate]);
 
-  const handleProjectChange = (e) => {
-    setSelectedProjectId(e.target.value);
-  };
-
-  const handleAmountClick = (amount) => {
-    setSelectedAmount(amount);
-    setShowCustom(false);
-  };
-
-  const handleCustomAmountClick = () => {
-    setShowCustom(true);
-    setSelectedAmount(null);
-  };
-
+  const handleProjectChange = (e) => setSelectedProjectId(e.target.value);
+  const handleAmountClick = (amount) => { setSelectedAmount(amount); setShowCustom(false); };
+  const handleCustomAmountClick = () => { setShowCustom(true); setSelectedAmount(null); };
   const handlePrevMedia = () => {
-    const total = [
-      ...(selectedProject?.cover_image ? [selectedProject.cover_image] : []),
-      ...(selectedProject?.media || []),
-    ].length;
+    const total = [...(selectedProject?.cover_image ? [selectedProject.cover_image] : []), ...(selectedProject?.media || [])].length;
     setCurrentMediaIndex((prev) => (prev - 1 + total) % total);
   };
-
   const handleNextMedia = () => {
-    const total = [
-      ...(selectedProject?.cover_image ? [selectedProject.cover_image] : []),
-      ...(selectedProject?.media || []),
-    ].length;
+    const total = [...(selectedProject?.cover_image ? [selectedProject.cover_image] : []), ...(selectedProject?.media || [])].length;
     setCurrentMediaIndex((prev) => (prev + 1) % total);
   };
 
@@ -115,7 +139,7 @@ const Donate = () => {
           email: data.donor_email,
           project_id: data.project_id,
           amount: showCustom ? customAmount : selectedAmount,
-          currency: data.currency,
+          currency: currency, // <-- CHANGED: use detected/selected currency
           donation_type: data.donation_type,
           interval: data.interval,
           recurring: data.donation_type === "recurring",
@@ -133,345 +157,132 @@ const Donate = () => {
     }
   };
 
-  // Reset custom amount if preset selected
-  useEffect(() => {
-    if (!showCustom) setCustomAmount("");
-  }, [showCustom]);
+  useEffect(() => { if (!showCustom) setCustomAmount(""); }, [showCustom]);
 
   return (
     <>
       <Helmet>
         <title>Donate | Africa Access Water</title>
-        <meta
-          name="description"
-          content="Support our clean water projects through your generous donations."
-        />
+        <meta name="description" content="Support our clean water projects through your generous donations." />
         <meta property="og:title" content="Donate to Africa Access Water" />
-        <meta
-          property="og:description"
-          content="Your support brings clean, safe water to those in need."
-        />
+        <meta property="og:description" content="Your support brings clean, safe water to those in need." />
         <meta property="og:image" content="/images/og-donate.jpg" />
         <meta property="og:url" content={window.location.href} />
       </Helmet>
 
       <Layout>
-        {/* Spacer to prevent navbar overlap */}
-        <div
-          style={{
-            paddingTop: window.innerWidth < 768 ? '95px' : '130px',
-            backgroundColor: '#001d23',
-          }}
-        > 
-        </div>
+        <div style={{ paddingTop: window.innerWidth < 768 ? '95px' : '130px', backgroundColor: '#001d23' }}></div>
 
-        <div
-          className="container-fluid donate mb-5 py-5"
-          style={{
-            backgroundImage: `url('img/pipe.jpg')`,
-            backgroundAttachment: "fixed",
-            backgroundSize: "cover",
-          }}
-        >
+        <div className="container-fluid donate mb-5 py-5" style={{ backgroundImage: `url('img/pipe.jpg')`, backgroundAttachment: "fixed", backgroundSize: "cover" }}>
           <div className="container py-5">
             <div className="row g-5 align-items-start">
+
               {/* Left Side Text */}
               <div className="col-lg-6 h-100 bg-white p-5 rounded shadow-sm">
                 {selectedProjectId === "1" || !selectedProject ? (
                   <>
-                    {/* Title */}
                     <h1 className="fw-bold mb-4 text-dark">
-                      Join Us in{" "}
-                      <span className="text-primary">Making a Difference</span>
+                      Join Us in <span className="text-primary">Making a Difference</span>
                     </h1>
-
-                    {/* Intro */}
                     <p className="text-muted mb-4">
                       In making a donation with us you are securing clean drinking water for generations. You are ensuring people in rural communities have food security. You are empowering communities with education, a consistent income and a <strong>brighter future.</strong>
                     </p>
-
-                    {/* Goal Highlight */}
                     <div className="alert alert-primary rounded-pill px-4 py-2 mb-4 d-inline-block shadow-sm w-100 text-center">
                       <i className="bi bi-flag me-2"></i>
-                      <strong>Every $10 provides clean drinking water for decades</strong>
+                      <strong>Every {currencySymbols[currency] || "$"}10 provides clean drinking water for decades</strong>
                     </div>
-
-                    {/* Supporting Text */}
                     <p className="mb-4">
-                      All donations are securely processed via{" "}
-                      <strong>Stripe</strong>. Thank you for
-                      empowering change.
+                      All donations are securely processed via <strong>Stripe</strong>. Thank you for empowering change.
                     </p>
                   </>
                 ) : (
-                  <>
-                    {/* Project Info */}
+                  <div className="bg-light rounded p-4 shadow-sm mb-4">
+                    {selectedProject.category && <p className="mb-3 bg-primary text-white text-center"><strong>{selectedProject.category}</strong></p>}
+                    <h2 className="fw-bold mb-3 text-primary">{selectedProject.name}</h2>
+                    <p className="text-muted mb-4">{selectedProject.description}</p>
 
-                    <div className="bg-light rounded p-4 shadow-sm mb-4">
-                      {selectedProject.category && (
-                        <p className="mb-3 bg-primary text-white text-center">
-                          <strong>{selectedProject.category}</strong>
-                        </p>
-                      )}
-
-                      <h2 className="fw-bold mb-3 text-primary">
-                        {selectedProject.name}
-                      </h2>
-
-                      <p className="text-muted mb-4">
-                        {selectedProject.description}
-                      </p>
-
-                      {/* Project Slider */}
-                      {selectedProject &&
-                        [
-                          ...(selectedProject.cover_image
-                            ? [selectedProject.cover_image]
-                            : []),
-                          ...(selectedProject.media || []),
-                        ].length > 0 && (
-                          <div className="mb-4">
-                            <div
-                              id={`modal-carousel-${selectedProject.id}`}
-                              className="carousel slide"
-                              data-bs-ride="carousel"
-                            >
-                              {/* Main Images */}
-                              <div className="carousel-inner rounded overflow-hidden shadow-sm">
-                                {[
-                                  ...(selectedProject.cover_image
-                                    ? [selectedProject.cover_image]
-                                    : []),
-                                  ...(selectedProject.media || []),
-                                ].map((url, idx) => (
-                                  <div
-                                    key={idx}
-                                    className={`carousel-item ${
-                                      idx === currentMediaIndex ? "active" : ""
-                                    }`}
-                                  >
-                                    <img
-                                      src={url}
-                                      alt={`media-${idx}`}
-                                      className="d-block w-100"
-                                      style={{
-                                        height: "320px",
-                                        objectFit: "cover",
-                                        objectPosition: "center",
-                                      }}
-                                    />
-                                  </div>
-                                ))}
-                              </div>
-
-                              {/* Controls */}
-                              <button
-                                className="carousel-control-prev"
-                                type="button"
-                                data-bs-target={`#modal-carousel-${selectedProject.id}`}
-                                data-bs-slide="prev"
-                                onClick={handlePrevMedia}
-                              >
-                                <span className="carousel-control-prev-icon"></span>
-                                <span className="visually-hidden">
-                                  Previous
-                                </span>
-                              </button>
-                              <button
-                                className="carousel-control-next"
-                                type="button"
-                                data-bs-target={`#modal-carousel-${selectedProject.id}`}
-                                data-bs-slide="next"
-                                onClick={handleNextMedia}
-                              >
-                                <span className="carousel-control-next-icon"></span>
-                                <span className="visually-hidden">Next</span>
-                              </button>
-
-                              {/* Thumbnails */}
-                              <div className="d-flex justify-content-center mt-2 gap-2 flex-wrap">
-                                {[
-                                  ...(selectedProject.cover_image
-                                    ? [selectedProject.cover_image]
-                                    : []),
-                                  ...(selectedProject.media || []),
-                                ].map((url, idx) => (
-                                  <img
-                                    key={idx}
-                                    src={url}
-                                    alt={`thumb-${idx}`}
-                                    className={`img-thumbnail ${
-                                      idx === currentMediaIndex
-                                        ? "border-primary"
-                                        : ""
-                                    }`}
-                                    style={{
-                                      width: "60px",
-                                      height: "60px",
-                                      objectFit: "cover",
-                                      cursor: "pointer",
-                                    }}
-                                    onClick={() => setCurrentMediaIndex(idx)}
-                                    data-bs-target={`#modal-carousel-${selectedProject.id}`}
-                                    data-bs-slide-to={idx}
-                                  />
-                                ))}
-                              </div>
-                            </div>
+                    {/* Progress */}
+                    {selectedProject.donation_goal !== undefined && selectedProject.donation_raised !== undefined && (
+                      <div className="causes-progress bg-white border rounded p-3">
+                        <div className="d-flex justify-content-between mb-2">
+                          <span className="fw-semibold text-dark">
+                            Goal: {currencySymbols[currency] || "$"}{selectedProject.donation_goal.toLocaleString()}
+                          </span>
+                          <span className="fw-semibold text-success">
+                            Raised: {currencySymbols[currency] || "$"}{selectedProject.donation_raised.toLocaleString()}
+                          </span>
+                        </div>
+                        <div className="progress" style={{ height: "20px" }}>
+                          <div
+                            className="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+                            role="progressbar"
+                            style={{ width: `${(selectedProject.donation_raised / selectedProject.donation_goal) * 100}%` }}
+                            aria-valuenow={(selectedProject.donation_raised / selectedProject.donation_goal) * 100}
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                            {Math.round((selectedProject.donation_raised / selectedProject.donation_goal) * 100)}%
                           </div>
-                        )}
-
-                      {selectedProject.donation_goal !== undefined &&
-                        selectedProject.donation_raised !== undefined && (
-                          <div className="causes-progress bg-white border rounded p-3">
-                            <div className="d-flex justify-content-between mb-2">
-                              <span className="fw-semibold text-dark">
-                                Goal: $
-                                {selectedProject.donation_goal.toLocaleString()}
-                              </span>
-                              <span className="fw-semibold text-success">
-                                Raised: $
-                                {selectedProject.donation_raised.toLocaleString()}
-                              </span>
-                            </div>
-
-                            {/* Progress Bar */}
-                            <div
-                              className="progress"
-                              style={{ height: "20px" }}
-                            >
-                              <div
-                                className="progress-bar progress-bar-striped progress-bar-animated bg-primary"
-                                role="progressbar"
-                                style={{
-                                  width: `${
-                                    (selectedProject.donation_raised /
-                                      selectedProject.donation_goal) *
-                                    100
-                                  }%`,
-                                }}
-                                aria-valuenow={
-                                  (selectedProject.donation_raised /
-                                    selectedProject.donation_goal) *
-                                  100
-                                }
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                              >
-                                {Math.round(
-                                  (selectedProject.donation_raised /
-                                    selectedProject.donation_goal) *
-                                    100
-                                )}
-                                %
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                    </div>
-                  </>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 )}
               </div>
 
-              {/* Right Side Form + Slider */}
+              {/* Right Side Form */}
               <div className="col-lg-6">
                 <div className="h-100 bg-white p-5 rounded shadow-sm text-center">
-                  {/* Logo */}
                   <Link to="/" className="d-flex justify-content-center mb-4">
-                    <img
-                      src="/img/logos/afaw-logo-black.png"
-                      alt="afaw-logo-africa"
-                      className="img-fluid"
-                      style={{ width: "40px", height: "auto" }}
-                    />
+                    <img src="/img/logos/afaw-logo-black.png" alt="afaw-logo-africa" className="img-fluid" style={{ width: "40px", height: "auto" }} />
                   </Link>
 
-                  {/* Tag */}
                   <div className="d-inline-block rounded-pill bg-primary text-white py-2 px-4 mb-4 shadow-sm">
                     <i className="bi bi-heart-fill me-2"></i> Support Our Cause
                   </div>
 
-                  {/* Donation Form */}
+                  {/* Form */}
                   <form onSubmit={handleSubmit} className="text-start">
                     {/* Full Name */}
                     <div className="form-group mb-3">
                       <div className="input-group">
-                        <span className="input-group-text">
-                          <i className="bi bi-person"></i>
-                        </span>
-                        <input
-                          type="text"
-                          name="donor_name"
-                          className="form-control"
-                          placeholder="Full Name"
-                          required
-                        />
+                        <span className="input-group-text"><i className="bi bi-person"></i></span>
+                        <input type="text" name="donor_name" className="form-control" placeholder="Full Name" required />
                       </div>
                     </div>
 
                     {/* Email */}
                     <div className="form-group mb-3">
                       <div className="input-group">
-                        <span className="input-group-text">
-                          <i className="bi bi-envelope"></i>
-                        </span>
-                        <input
-                          type="email"
-                          name="donor_email"
-                          className="form-control"
-                          placeholder="Email Address"
-                          required
-                        />
+                        <span className="input-group-text"><i className="bi bi-envelope"></i></span>
+                        <input type="email" name="donor_email" className="form-control" placeholder="Email Address" required />
                       </div>
                     </div>
 
                     {/* Project Dropdown */}
                     <div className="form-group mb-3">
-                      <select
-                        name="project_id"
-                        className="form-select"
-                        value={selectedProjectId}
-                        onChange={handleProjectChange}
-                        required
-                      >
+                      <select name="project_id" className="form-select" value={selectedProjectId} onChange={handleProjectChange} required>
                         <option value="1">General Donation</option>
-                        {projects
-                          .filter((p) => String(p.id) !== "1")
-                          .map((project) => (
-                            <option key={project.id} value={project.id}>
-                              {project.name}
-                            </option>
-                          ))}
+                        {projects.filter((p) => String(p.id) !== "1").map((project) => (
+                          <option key={project.id} value={project.id}>{project.name}</option>
+                        ))}
                       </select>
                     </div>
 
                     {/* Donation Type + Currency */}
                     <div className="form-group row mb-3">
                       <div className="col-sm-6 mb-3 mb-sm-0">
-                        <select
-                          name="donation_type"
-                          className="form-select"
-                          value={donationType}
-                          onChange={(e) => setDonationType(e.target.value)}
-                          required
-                        >
+                        <select name="donation_type" className="form-select" value={donationType} onChange={(e) => setDonationType(e.target.value)} required>
                           <option value="">Donation Type</option>
                           <option value="one_time">One Time</option>
                           <option value="recurring">Recurring</option>
                         </select>
                       </div>
                       <div className="col-sm-6">
-                        <select
-                          name="currency"
-                          className="form-select"
-                          defaultValue="USD"
-                          required
-                        >
-                          <option value="USD">USD</option>
-                          <option value="GBP">GBP</option>
-                          <option value="ZMW">ZMW</option>
-                          <option value="CAD">CAD</option>
-                          <option value="AUD">AUD</option>
+                        <select name="currency" className="form-select" value={currency} onChange={(e) => setCurrency(e.target.value)} required>
+                          {Object.keys(currencySymbols).map((c) => (
+                            <option key={c} value={c}>{c}</option>
+                          ))}
                         </select>
                       </div>
                     </div>
@@ -479,12 +290,7 @@ const Donate = () => {
                     {/* Recurring Interval */}
                     {donationType === "recurring" && (
                       <div className="form-group mb-3">
-                        <select
-                          name="interval"
-                          className="form-select"
-                          required
-                          defaultValue="month"
-                        >
+                        <select name="interval" className="form-select" required defaultValue="month">
                           <option value="">Select Interval</option>
                           <option value="day">Daily</option>
                           <option value="week">Weekly</option>
@@ -496,55 +302,23 @@ const Donate = () => {
 
                     {/* Amount */}
                     <div className="form-group mb-4">
-                      <label className="form-label fw-semibold">
-                        Select Donation Amount
-                      </label>
+                      <label className="form-label fw-semibold">Select Donation Amount</label>
                       <div className="d-flex flex-wrap gap-2 mb-2">
                         {[10, 30, 50, 100].map((amount) => (
-                          <button
-                            key={amount}
-                            type="button"
-                            className={`btn btn-outline-primary ${
-                              selectedAmount === String(amount) ? "active" : ""
-                            }`}
-                            onClick={() => handleAmountClick(String(amount))}
-                          >
-                            {amount}
+                          <button key={amount} type="button" className={`btn btn-outline-primary ${selectedAmount === String(amount) ? "active" : ""}`} onClick={() => handleAmountClick(String(amount))}>
+                            {currencySymbols[currency] || "$"}{amount}
                           </button>
                         ))}
-                        <button
-                          type="button"
-                          className="btn btn-outline-primary"
-                          onClick={handleCustomAmountClick}
-                        >
-                          Other
-                        </button>
+                        <button type="button" className="btn btn-outline-primary" onClick={handleCustomAmountClick}>Other</button>
                       </div>
-                      {showCustom && (
-                        <input
-                          type="number"
-                          min="1"
-                          value={customAmount}
-                          onChange={(e) => setCustomAmount(e.target.value)}
-                          className="form-control mt-2"
-                          placeholder="Enter custom amount"
-                          required
-                        />
-                      )}
+                      {showCustom && <input type="number" min="1" value={customAmount} onChange={(e) => setCustomAmount(e.target.value)} className="form-control mt-2" placeholder="Enter custom amount" required />}
                     </div>
 
                     {/* Submit */}
-                    <button
-                      type="submit"
-                      className="btn btn-primary btn-lg w-100 shadow-sm"
-                      disabled={isSubmitting}
-                    >
+                    <button type="submit" className="btn btn-primary btn-lg w-100 shadow-sm" disabled={isSubmitting}>
                       {isSubmitting ? (
                         <>
-                          <span
-                            className="spinner-border spinner-border-sm me-2"
-                            role="status"
-                          ></span>
+                          <span className="spinner-border spinner-border-sm me-2" role="status"></span>
                           Processing...
                         </>
                       ) : (
@@ -556,6 +330,7 @@ const Donate = () => {
                   </form>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
