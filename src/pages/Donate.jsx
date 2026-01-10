@@ -31,7 +31,7 @@ const Donate = () => {
     ZMW: "ZK",
     CAD: "C$",
     AUD: "A$",
-    KES: "KES",
+    KES: "KSh ",
     ZAR: "R",
   };
 
@@ -47,7 +47,7 @@ const Donate = () => {
   };
 
   // Currencies that require button scaling
-  const scaledCurrencies = new Set(["ZMW"]);
+  const scaledCurrencies = new Set(["ZMW","CAD","AUD","KES","ZAR"]);
 
   // Convert amount for alert
   const formatAlertAmount = (usdAmount, currency) => {
@@ -78,6 +78,8 @@ const Donate = () => {
           ZM: "ZMW",
           CA: "CAD",
           AU: "AUD",
+          KE: "KES",  // Kenya
+          ZA: "ZAR",  // South Africa
         };
         setCurrency(regionCurrencyMap[region] || "USD");
       } catch (err) {
