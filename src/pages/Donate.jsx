@@ -468,6 +468,7 @@ const Donate = () => {
                           required
                         >
                           <option value="USD">USD</option>
+                          <option value="GBP">GBP</option>
                         </select>
                       </div>
                     </div>
