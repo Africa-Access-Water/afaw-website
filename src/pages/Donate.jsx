@@ -469,6 +469,9 @@ const Donate = () => {
                         >
                           <option value="USD">USD</option>
                           <option value="GBP">GBP</option>
+                          <option value="ZMW">ZMW</option>
+                          <option value="CAD">CAD</option>
+                          <option value="AUD">AUD</option>
                         </select>
                       </div>
                     </div>
@@ -506,7 +509,7 @@ const Donate = () => {
                             }`}
                             onClick={() => handleAmountClick(String(amount))}
                           >
-                            ${amount}
+                            {amount}
                           </button>
                         ))}
                         <button
