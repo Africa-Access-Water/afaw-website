@@ -81,7 +81,7 @@ const Milestones2024 = () => {
                                 <i className="icofont icofont-flag"></i>
                             </div>
                             <h3>Future Focus</h3>
-                            <p>Set the stage for 2025 with plans to deepen impact and innovate sustainable water solutions
+                            <p>Set the stage for 2026 with plans to deepen impact and innovate sustainable water solutions
                                 further.</p>
                         </div>
                         {/* End Single Milestone */}

@@ -187,29 +187,19 @@ const Donate = () => {
 
                     {/* Intro */}
                     <p className="text-muted mb-4">
-                      Two sites in <strong>Mphande</strong> and{" "}
-                      <strong>Rufunsa</strong> communities have been earmarked
-                      to install solar-powered water systems for productive use—
-                      year-round irrigation, drinking, and livestock. These will
-                      benefit <strong>2,300+ people</strong> and{" "}
-                      <strong>1,000 animals</strong>.
+                      In making a donation with us you are securing clean drinking water for generations. You are ensuring people in rural communities have food security. You are empowering communities with education, a consistent income and a <strong>brighter future.</strong>
                     </p>
 
                     {/* Goal Highlight */}
                     <div className="alert alert-primary rounded-pill px-4 py-2 mb-4 d-inline-block shadow-sm w-100 text-center">
                       <i className="bi bi-flag me-2"></i>
-                      <strong>We are raising US$93,000</strong>
+                      <strong>Every $10 provides clean drinking water for decades</strong>
                     </div>
 
                     {/* Supporting Text */}
-                    <p className="mb-3">
-                      Your contribution helps fund{" "}
-                      <strong>sustainable infrastructure</strong> and builds{" "}
-                      <strong>long-term food security</strong>.
-                    </p>
                     <p className="mb-4">
                       All donations are securely processed via{" "}
-                      <strong>Stripe & DPO Group</strong>. Thank you for
+                      <strong>Stripe</strong>. Thank you for
                       empowering change.
                     </p>
                   </>

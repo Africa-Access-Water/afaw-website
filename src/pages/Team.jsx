@@ -11,12 +11,14 @@ const Team = () => {
   }, []);
 
   // Filter members by type and sort by ID in ascending order
-  const boardMembers = teamMembers
-    .filter(member => member.type === "Board Member")
-    .sort((a, b) => a.id - b.id);
+  
     
   const teamMembersList = teamMembers
     .filter(member => member.type === "Team Member")
+    .sort((a, b) => a.id - b.id);
+
+  const boardMembers = teamMembers
+    .filter(member => member.type === "Board Member")
     .sort((a, b) => a.id - b.id);
 
   const volunteersList = teamMembers
@@ -33,6 +35,30 @@ const Team = () => {
           }}
         > 
         </div>
+
+      
+
+      {/* Our Team */}
+      <div className="container-xxl mt-5">
+        <div className="container">
+          <div className="text-center mx-auto mb-5" style={{ maxWidth: "600px" }}>
+            <h1 className="mb-3">Meet Our Team</h1>
+            <p>The team members battling rural poverty</p>
+          </div>
+            <div className="row g-4 text-center mx-2 mx-md-0 mx-lg-1">
+              {teamMembersList.map((member, index) => (
+                <TeamCard 
+                  key={member.id || index} 
+                  {...member} 
+                  role= ""
+                  image_url= {member.image_url || "/img/placeholders/profile.jpg"} 
+                  alt={member.full_name}
+                  
+                />
+              ))}
+            </div>
+        </div>
+      </div>
 
       {/* Our Board Members */}
       <div className="container-xxl mt-5">
@@ -54,28 +80,6 @@ const Team = () => {
                   />
                 );
               })}
-            </div>
-        </div>
-      </div>
-
-      {/* Our Team */}
-      <div className="container-xxl mt-5">
-        <div className="container">
-          <div className="text-center mx-auto mb-5" style={{ maxWidth: "600px" }}>
-            <h1 className="mb-3">Meet Our Team</h1>
-            <p>The team members battling rural poverty</p>
-          </div>
-            <div className="row g-4 text-center mx-2 mx-md-0 mx-lg-1">
-              {teamMembersList.map((member, index) => (
-                <TeamCard 
-                  key={member.id || index} 
-                  {...member} 
-                  role= ""
-                  image_url= {member.image_url || "/img/placeholders/profile.jpg"} 
-                  alt={member.full_name}
-                  
-                />
-              ))}
             </div>
         </div>
       </div>
