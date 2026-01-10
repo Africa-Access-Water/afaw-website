@@ -154,42 +154,50 @@ const Donate = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
+  e.preventDefault();
+  setIsSubmitting(true);
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData);
 
-    try {
-      const endpoint =
-        data.donation_type === "recurring"
-          ? `${API_BASE}/api/donations/subscribe`
-          : `${API_BASE}/api/donations/donate`;
+  try {
+    // Determine the correct amount to send to Stripe
+    let amountToSend = showCustom ? Number(customAmount) : Number(selectedAmount);
 
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: data.donor_name,
-          email: data.donor_email,
-          project_id: data.project_id,
-          amount: showCustom ? customAmount : selectedAmount,
-          currency: currency,
-          donation_type: data.donation_type,
-          interval: data.interval,
-          recurring: data.donation_type === "recurring",
-        }),
-      });
-
-      const json = await res.json();
-      if (json.url) window.location.href = json.url;
-      else alert("Error creating donation session. Please try again.");
-    } catch (err) {
-      console.error(err);
-      alert("Something went wrong. Try again.");
-    } finally {
-      setIsSubmitting(false);
+    // Apply scaling for currencies that need it
+    if (scaledCurrencies.has(currency)) {
+      amountToSend = Math.round(amountToSend * (currencyConversionRates[currency] || 1));
     }
-  };
+
+    const endpoint =
+      data.donation_type === "recurring"
+        ? `${API_BASE}/api/donations/subscribe`
+        : `${API_BASE}/api/donations/donate`;
+
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: data.donor_name,
+        email: data.donor_email,
+        project_id: data.project_id,
+        amount: amountToSend,          // <-- send converted amount
+        currency: currency,            // <-- selected currency
+        donation_type: data.donation_type,
+        interval: data.interval,
+        recurring: data.donation_type === "recurring",
+      }),
+    });
+
+    const json = await res.json();
+    if (json.url) window.location.href = json.url;
+    else alert("Error creating donation session. Please try again.");
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong. Try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   // Reset custom amount if preset selected
   useEffect(() => { if (!showCustom) setCustomAmount(""); }, [showCustom]);
@@ -349,8 +357,8 @@ const Donate = () => {
                             </div>
                           </div>
                         )}
-
-                      {selectedProject.donation_goal !== undefined &&
+                      {/* Commeneted out progress bar for now */}
+                      {/* {selectedProject.donation_goal !== undefined &&
                         selectedProject.donation_raised !== undefined && (
                           <div className="causes-progress bg-white border rounded p-3">
                             <div className="d-flex justify-content-between mb-2">
@@ -364,7 +372,7 @@ const Donate = () => {
                               </span>
                             </div>
 
-                            {/* Progress Bar */}
+                            Progress Bar
                             <div
                               className="progress"
                               style={{ height: "20px" }}
@@ -396,7 +404,7 @@ const Donate = () => {
                               </div>
                             </div>
                           </div>
-                        )}
+                        )} */}
                     </div>
                   </>
                 )}
