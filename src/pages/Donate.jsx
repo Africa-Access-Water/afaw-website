@@ -234,7 +234,170 @@ const Donate = () => {
                   </>
                 ) : (
                   <>
-                    {/* Project info and slider can remain unchanged */}
+                    {/* Project Info */}
+
+                    <div className="bg-light rounded p-4 shadow-sm mb-4">
+                      {selectedProject.category && (
+                        <p className="mb-3 bg-primary text-white text-center">
+                          <strong>{selectedProject.category}</strong>
+                        </p>
+                      )}
+
+                      <h2 className="fw-bold mb-3 text-primary">
+                        {selectedProject.name}
+                      </h2>
+
+                      <p className="text-muted mb-4">
+                        {selectedProject.description}
+                      </p>
+
+                      {/* Project Slider */}
+                      {selectedProject &&
+                        [
+                          ...(selectedProject.cover_image
+                            ? [selectedProject.cover_image]
+                            : []),
+                          ...(selectedProject.media || []),
+                        ].length > 0 && (
+                          <div className="mb-4">
+                            <div
+                              id={`modal-carousel-${selectedProject.id}`}
+                              className="carousel slide"
+                              data-bs-ride="carousel"
+                            >
+                              {/* Main Images */}
+                              <div className="carousel-inner rounded overflow-hidden shadow-sm">
+                                {[
+                                  ...(selectedProject.cover_image
+                                    ? [selectedProject.cover_image]
+                                    : []),
+                                  ...(selectedProject.media || []),
+                                ].map((url, idx) => (
+                                  <div
+                                    key={idx}
+                                    className={`carousel-item ${
+                                      idx === currentMediaIndex ? "active" : ""
+                                    }`}
+                                  >
+                                    <img
+                                      src={url}
+                                      alt={`media-${idx}`}
+                                      className="d-block w-100"
+                                      style={{
+                                        height: "320px",
+                                        objectFit: "cover",
+                                        objectPosition: "center",
+                                      }}
+                                    />
+                                  </div>
+                                ))}
+                              </div>
+
+                              {/* Controls */}
+                              <button
+                                className="carousel-control-prev"
+                                type="button"
+                                data-bs-target={`#modal-carousel-${selectedProject.id}`}
+                                data-bs-slide="prev"
+                                onClick={handlePrevMedia}
+                              >
+                                <span className="carousel-control-prev-icon"></span>
+                                <span className="visually-hidden">
+                                  Previous
+                                </span>
+                              </button>
+                              <button
+                                className="carousel-control-next"
+                                type="button"
+                                data-bs-target={`#modal-carousel-${selectedProject.id}`}
+                                data-bs-slide="next"
+                                onClick={handleNextMedia}
+                              >
+                                <span className="carousel-control-next-icon"></span>
+                                <span className="visually-hidden">Next</span>
+                              </button>
+
+                              {/* Thumbnails */}
+                              <div className="d-flex justify-content-center mt-2 gap-2 flex-wrap">
+                                {[
+                                  ...(selectedProject.cover_image
+                                    ? [selectedProject.cover_image]
+                                    : []),
+                                  ...(selectedProject.media || []),
+                                ].map((url, idx) => (
+                                  <img
+                                    key={idx}
+                                    src={url}
+                                    alt={`thumb-${idx}`}
+                                    className={`img-thumbnail ${
+                                      idx === currentMediaIndex
+                                        ? "border-primary"
+                                        : ""
+                                    }`}
+                                    style={{
+                                      width: "60px",
+                                      height: "60px",
+                                      objectFit: "cover",
+                                      cursor: "pointer",
+                                    }}
+                                    onClick={() => setCurrentMediaIndex(idx)}
+                                    data-bs-target={`#modal-carousel-${selectedProject.id}`}
+                                    data-bs-slide-to={idx}
+                                  />
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                      {selectedProject.donation_goal !== undefined &&
+                        selectedProject.donation_raised !== undefined && (
+                          <div className="causes-progress bg-white border rounded p-3">
+                            <div className="d-flex justify-content-between mb-2">
+                              <span className="fw-semibold text-dark">
+                                Goal: $
+                                {selectedProject.donation_goal.toLocaleString()}
+                              </span>
+                              <span className="fw-semibold text-success">
+                                Raised: $
+                                {selectedProject.donation_raised.toLocaleString()}
+                              </span>
+                            </div>
+
+                            {/* Progress Bar */}
+                            <div
+                              className="progress"
+                              style={{ height: "20px" }}
+                            >
+                              <div
+                                className="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+                                role="progressbar"
+                                style={{
+                                  width: `${
+                                    (selectedProject.donation_raised /
+                                      selectedProject.donation_goal) *
+                                    100
+                                  }%`,
+                                }}
+                                aria-valuenow={
+                                  (selectedProject.donation_raised /
+                                    selectedProject.donation_goal) *
+                                  100
+                                }
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              >
+                                {Math.round(
+                                  (selectedProject.donation_raised /
+                                    selectedProject.donation_goal) *
+                                    100
+                                )}
+                                %
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                    </div>
                   </>
                 )}
               </div>
@@ -245,11 +408,11 @@ const Donate = () => {
                   <Link to="/" className="d-flex justify-content-center mb-4">
                     <img src="/img/logos/afaw-logo-black.png" alt="afaw-logo-africa" className="img-fluid" style={{ width: "40px", height: "auto" }} />
                   </Link>
-
+                  {/* Tag */}
                   <div className="d-inline-block rounded-pill bg-primary text-white py-2 px-4 mb-4 shadow-sm">
                     <i className="bi bi-heart-fill me-2"></i> Support Our Cause
                   </div>
-
+                  {/* Donation Form */}
                   <form onSubmit={handleSubmit} className="text-start">
                     {/* Name & Email */}
                     <div className="form-group mb-3">
@@ -258,6 +421,7 @@ const Donate = () => {
                         <input type="text" name="donor_name" className="form-control" placeholder="Full Name" required />
                       </div>
                     </div>
+                    {/* Email */}                    
                     <div className="form-group mb-3">
                       <div className="input-group">
                         <span className="input-group-text"><i className="bi bi-envelope"></i></span>
