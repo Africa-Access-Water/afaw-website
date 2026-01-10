@@ -11,16 +11,16 @@ const Cause = ({projectId, delay, title, desc, goal, raised, tag, img, alt }) =>
           </div>
           <h5 className="mb-3">{title}</h5>
           <p>{desc}</p>
-          <div className="causes-progress bg-light p-3 pt-2">
-            <div className="d-flex justify-content-between">
-              <p className="text-dark">
+          {/* <div className="causes-progress bg-light p-3 pt-2"> 
+             <div className="d-flex justify-content-between"> */}
+              {/* <p className="text-dark">
                 ${goal.toLocaleString()} <small className="text-body">Goal</small>
-              </p>
-              <p className="text-dark">
+              </p> */}
+              {/* <p className="text-dark">
                 ${raised.toLocaleString()} <small className="text-body">Raised</small>
-              </p>
+              </p> */}
             </div>
-            <div className="progress">
+            {/* <div className="progress">
               <div
                 className="progress-bar"
                 role="progressbar"
@@ -31,9 +31,9 @@ const Cause = ({projectId, delay, title, desc, goal, raised, tag, img, alt }) =>
               >
                 <span>{Math.round((raised / goal) * 100)}%</span>
               </div>
-            </div>
-          </div>
-        </div>
+            </div> */}
+          {/* </div>
+        </div> */}
         <div className="position-relative mt-auto">
           <img className="img-fluid" src={img} alt={alt} 
               style={{

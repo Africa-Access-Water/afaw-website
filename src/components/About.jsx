@@ -2,16 +2,20 @@ import React from 'react';
 
 const About = ({ image, smallImage, title, quote, description, buttons }) => {
   return (
-    <>
-        <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+    <section className='container'>
+         {/* <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">About Us</div> */}
+        {/* <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
             <div className="position-relative overflow-hidden h-100" style={{ minHeight: "400px" }}>
                 <img className="position-absolute w-100 h-100 pt-5 pe-5" src="img/solar1-1.jpeg" alt="Solar Water Project" style={{ objectFit: "cover" }} />
                 <img className="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="img/happy-produce.jpg" alt="Women Farmers" style={{ width: "200px", height: "200px" }} />
             </div>
-        </div>
+        </div> */}
+         <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">
+                               What We Do
+                            </div>
         <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
             <div className="h-100">
-                <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">About Us</div>
+               
                 <h1 className="display-6 mb-5">Empowering Rural Africa Through Solar-Powered Water Solutions</h1>
                 <div className="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
                     <p className="text-dark mb-2">
@@ -27,12 +31,12 @@ const About = ({ image, smallImage, title, quote, description, buttons }) => {
                     security, increase income, and build resilience to climate change. Our programs empower
                     women, youth, and farmers across Zambia and beyond.
                 </p>
-                <a className="btn btn-primary py-2 px-3 me-3" href="/about">
+                {/* <a className="btn btn-primary py-2 px-3 me-3" href="/about">
                     Learn More
                     <div className="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                         <i className="fa fa-arrow-right"></i>
                     </div>
-                </a>
+                </a> */}
                 <a className="btn btn-outline-primary py-2 px-3" href="/contact">
                     Contact Us
                     <div className="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
@@ -41,7 +45,7 @@ const About = ({ image, smallImage, title, quote, description, buttons }) => {
                 </a>
             </div>
         </div>     
-    </>
+    </section>
   );
 };
 

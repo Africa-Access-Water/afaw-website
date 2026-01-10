@@ -55,6 +55,32 @@ function Projects() {
                   }}
                 > 
                 </div>
+                 <section className="position-relative text-white text-center">
+          <img
+            // src="/img/IMG-20240418-WA0094.jpg"
+             src="/img/community2.jpg"
+            alt="Clean water flowing"
+            className="img-fluid w-100 impact-img"
+            style={{
+              objectFit: "cover",
+              filter: "brightness(100%)",
+            }}
+          />
+          <style>{`
+  /* Default for mobile, small, and medium screens */
+  .impact-img {
+    height: 250px;
+  }
+
+  /* Large screens and above (≥ 992px) */
+  @media (min-width: 992px) {
+    .impact-img {
+      height: 400px;
+    }
+  }
+`}</style>
+
+        </section>
 
                 <div className="container-xxl mb-5 pb-5">
                     <div className="container py-5">
@@ -63,13 +89,16 @@ function Projects() {
                             style={{ maxWidth: "600px" }}
                         >
                             <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">
-                                Our Impact
+                               Proof of Impact
                             </div>
-                            <h1 className="display-6 mb-4">
-                                Projects Driving Clean Water Access
+                            <h1 className="display-5 mb-4">
+                           Real Communities. Real Change. Real Impact
                             </h1>
-                            <p className="text-muted">
-                                Discover the initiatives making a difference across Africa.
+                            <p className="mb-4">
+                              Every project we deploy strengthens food security, boosts incomes, and expands access to clean water.
+                              <br/>
+                               Browse our ongoing and completed projects to see the progress, the data, and                             
+                                <span className="text-primary">the lives changed.</span>   
                             </p>
                         </div>
 
@@ -105,7 +134,7 @@ function Projects() {
                                                                 >
                                                                     <img
                                                                         src={img}
-                                                                        className="d-block w-100 vh-100"
+                                                                        className="d-block w-100 vh-70"
                                                                         alt={`${project.name}-img-${idx}`}
                                                                         style={{
                                                                             height: "220px",
@@ -171,10 +200,10 @@ function Projects() {
                                                             <strong>Goal:</strong> $
                                                             {project.donation_goal?.toLocaleString() || 0}
                                                         </li>
-                                                        <li className="text-success">
+                                                        {/* <li className="text-success">
                                                             <strong>Raised:</strong> $
                                                             {project.donation_raised?.toLocaleString() || 0}
-                                                        </li>
+                                                        </li> */}
                                                     </ul>
 
                                                     {/* View Details and Donate Buttons */}
@@ -193,7 +222,7 @@ function Projects() {
                                                             onClick={(e) => e.stopPropagation()}
                                                         >
                                                             Donate
-                                                            <i className="fas fa-heart ms-2"></i>
+                                                            <i className="fa fa-tint px-2" style={{ color: "#1a76d1", fontSize: "1rem" }}></i>
                                                         </a>
                                                     </div>
                                                 </div>

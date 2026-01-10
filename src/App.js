@@ -12,6 +12,9 @@ import FailurePage from "./pages/FailurePage";
 import WorkInProgress from "./pages/WorkInProgress";
 import NotFound from "./pages/404";
 import AboutPage from "./pages/AboutPage";
+import WhatWeDoPage from "./pages/WhatWeDo";
+import HowWeWork from "./pages/HowWeWork";
+import HowWeWorkPage from "./pages/HowWeWork";
 import LanguageSuggestion from "./components/LanguageSuggestion";
 
 
@@ -34,6 +37,9 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/donation/success" element={<SuccessPage />} />
         <Route path="/donation/failure" element={<FailurePage />} />
+        <Route path="/what-we-do" element={<WhatWeDoPage />} />
+        <Route path="/how-we-work" element={<HowWeWorkPage />} />
+
 
         <Route path="*" element={<NotFound />} />
                 

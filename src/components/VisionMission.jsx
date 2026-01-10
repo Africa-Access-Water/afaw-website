@@ -50,32 +50,7 @@ const VisionMissionObjectives = () => {
             </div>
         </div>
             {/* commented this section out as it should be in 'about us' section. helps improve flows and reduce load on homepage.  */}
-            {/* our vision and mission */}
-            {/* <div className="row">
-                <div className="col-lg-6 col-12">
-                    <div className="single-features">
-                        <div className="signle-icon">
-                            <i className="icofont icofont-eye-alt"></i>
-                        </div>
-                        <h3>Our Vision</h3>
-                        <p>African communities developed through solar-powered water.</p>
-                    </div>
-
-                </div>
-                <div className="col-lg-6 col-12">
-                    <div className="single-features last">
-                        <div className="signle-icon">
-                            <i className="icofont icofont-flag"></i>
-                        </div>
-                        <h3>Our Mission</h3>
-                        <p>To equip rural communities in Zambia and Africa with solar-powered water infrastructure and
-                            systems for
-                            productive use, food security, and socio-economic development.</p>
-                    </div>
-
-                </div>
-
-            </div> */}
+           
         </div>
     </section>
 

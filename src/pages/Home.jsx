@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
 import Carousel from "../components/Carousel";
-import VisionMission from "../components/VisionMission ";
+import VisionMissionObjectives from "../components/VisionMission";
 import CONFIG from "../config";
 import Stat from '../components/Stat';
 import Cause from '../components/Cause';
@@ -75,7 +75,7 @@ function Home() {
                 </section>
                 {/* Carousel End */}
 
-                <VisionMission />
+                <VisionMissionObjectives/>
 
                 {/*Stats Section*/} 
 

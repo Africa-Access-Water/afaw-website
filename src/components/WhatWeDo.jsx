@@ -158,16 +158,16 @@ const WhatWeDo = () => {
     ];
 
     return (
-        <div className="container-xxl py-5">
+        <div className="container-xxl ">
             <div className="container">
                 {/* Section Header */}
                 <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: '600px' }}>
-                    <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Process</div>
-                    <h1 className="display-5 mb-4 fw-bold text-dark">What We Do</h1>
+                    {/* <div className="d-inline-block rounded-pill bg-secondary text-primary px-3 mb-3">How We Work</div> */}
+                    {/* <h1 className="display-5 mb-4 fw-bold text-dark">What We Do</h1>
                     <p className="text-muted fs-5">
                         Discover how we empower communities through sustainable water solutions, 
                         agricultural development, and advocacy.
-                    </p>
+                    </p> */}
                 </div>
 
                 {/* What We Do Cards */}
@@ -182,7 +182,7 @@ const WhatWeDo = () => {
                         />
                     ))}
                 </div>
-                <img src="/img/canvas3.png" alt="What We Do Bottom" className="img-fluid mt-4 rounded" />
+                
             </div>
         </div>
     );

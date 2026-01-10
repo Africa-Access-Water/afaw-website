@@ -58,11 +58,41 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto p-4 p-lg-0">
                         <Link to="/" className={`nav-item ${isActive("/")}`}>Home</Link>
-                        <Link to="/about" className={`nav-item ${isActive("/about")}`}>About Us</Link>
-                        <Link to="/our-work" className={`nav-item ${isActive("/our-work")}`}>Our Work</Link>
-                        <Link to="/blogs" className={`nav-item ${isActive("/blogs")}`}>Blogs</Link>
+                        <Link to="/about" className={`nav-item ${isActive("/about")}`}>Who We Are</Link>
+                        <div className="nav-item dropdown">
+      <span 
+        className={`nav-link dropdown-toggle ${isActive("/our-work")}`} 
+        id="ourWorkDropdown" 
+        role="button" 
+        data-bs-toggle="dropdown" 
+        aria-expanded="false"
+        style={{ cursor: "pointer" }}
+      >
+        What We Do
+      </span>
+      <ul className="dropdown-menu" aria-labelledby="ourWorkDropdown">
+        <li>
+          <Link to="/what-we-do" className="dropdown-item">
+            Our Work
+          </Link>
+        </li>
+        <li>
+          <Link to="/how-we-work" className="dropdown-item">
+           How We Work
+          </Link>
+        </li>
+         <li>
+          <Link to="/our-work" className="dropdown-item">
+          Our Projects
+          </Link>
+        </li>
+      </ul>
+    </div>
+
                         <Link to="/team" className={`nav-item ${isActive("/team")}`}>Our Team</Link>
-                        <Link to="/contact" className={`nav-item ${isActive("/contact")}`}>Contact</Link>
+                         <Link to="/blogs" className={`nav-item ${isActive("/posts")}`}>Blog</Link>
+                        <Link to="/contact" className={`nav-item ${isActive("/contact")}`}>Get Involved</Link>
+
                         
                         {/* Mobile Google Translate */}
                         <div className="d-lg-none mt-3 px-3">

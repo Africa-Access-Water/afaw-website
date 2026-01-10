@@ -6,10 +6,9 @@ const Milestones2024 = () => {
             <div className="container">
                 {/* Section Header */}
                 <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 className="display-5 mb-3 fw-bold text-dark">Reflecting On 2024: Celebrating Milestones</h1>
-                    <p className="text-muted fs-5 mb-5">
-                        Discover the impactful achievements we've accomplished together in 2024<br />
-                        through sustainable water solutions.
+                    <h2 className="display-5 m-3 py-3 fw-bold text-dark">Here's what we achieved in 2024</h2>
+                    <p className="text-muted mb-5">
+                        Discover the impactful achievements we've accomplished together!!
                     </p>
                 </div>
 
