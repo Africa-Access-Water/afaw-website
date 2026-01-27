@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+// import GoogleTranslate from "./GoogleTranslate";
 import Navbar from "./Navbar";   // Create this component
 import Footer from "./Footer";   // Create this component
 
@@ -22,27 +23,7 @@ function Layout({ title, description, children }) {
       }, 1000);
     }
 
-    // Ensure Google Translate is reinitialized on route change for all elements
-    if (typeof window.google !== 'undefined' && window.google.translate) {
-      const elements = [
-        'google_translate_element',
-        'google_translate_element_navbar',
-        'google_translate_element_mobile',
-        'google_translate_element_footer'
-      ];
-      
-      elements.forEach(elementId => {
-        const translateElement = document.getElementById(elementId);
-        if (translateElement && !translateElement.querySelector('.goog-te-combo')) {
-          // Reinitialize if needed
-          setTimeout(() => {
-            if (typeof window.googleTranslateElementInit === 'function') {
-              window.googleTranslateElementInit();
-            }
-          }, 500);
-        }
-      });
-    }
+    
   }, [location]);
 
   return (
@@ -60,6 +41,11 @@ function Layout({ title, description, children }) {
       </div>
 
       <Navbar />
+      {/* <GoogleTranslate/> */}
+
+
+
+     
 
       <main>{children}</main>
 
