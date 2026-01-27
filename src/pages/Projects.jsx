@@ -21,6 +21,10 @@ function Projects() {
             try {
                 const res = await fetch(`${API_BASE}/api/projects`);
                 const data = await res.json();
+
+                // Filter here ####################
+
+
                 if (Array.isArray(data)) setProjects(data);
             } catch (err) {
                 console.error("Error fetching projects:", err);
