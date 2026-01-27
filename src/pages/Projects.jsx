@@ -54,7 +54,7 @@ function Projects() {
                 {/* Spacer to prevent navbar overlap */}
                 <div
                   style={{
-                    paddingTop: window.innerWidth < 768 ? '95px' : '130px',
+                    paddingTop: window.innerWidth < 768 ? '95px' : '150px',
                     backgroundColor: '#001d23',
                   }}
                 > 
@@ -102,7 +102,7 @@ function Projects() {
                               Every project we deploy strengthens food security, boosts incomes, and expands access to clean water.
                               <br/>
                                Browse our ongoing and completed projects to see the progress, the data, and                             
-                                <span className="text-primary">the lives changed.</span>   
+                                <span className="text-primary"> the lives changed.</span>   
                             </p>
                         </div>
 

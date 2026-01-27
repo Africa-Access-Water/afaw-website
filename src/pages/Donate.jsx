@@ -58,20 +58,23 @@ const Donate = () => {
 
   // Convert amount for preset buttons
   const formatButtonAmount = (usdAmount, currency) => {
-    if (scaledCurrencies.has(currency)) {
-      const rate = currencyConversionRates[currency] || 1;
-      return `${currencySymbols[currency] || "$"}${Math.round(usdAmount * rate)}`;
-    } else {
-      return `${currencySymbols[currency] || "$"}${usdAmount}`;
-    }
+    
+    const rate = currencyConversionRates[currency] || 1;
+    return `${currencySymbols[currency] || "$"}${Math.round(usdAmount * rate)}`;
+    
   };
 
-  // Detect user location for default currency
+// Detect user location via IP for default currency
   useEffect(() => {
     const setCurrencyByLocation = async () => {
       try {
-        const locale = navigator.language || "en-US"; // e.g., "en-GB"
-        const region = locale.split("-")[1];
+        // 1. Fetch location data based on the user's IP address
+        const response = await fetch("https://ipapi.co/json/");
+        const data = await response.json();
+        
+        // 2. Extract the country code (e.g., "ZM", "GB", "US")
+        const region = data.country_code; 
+
         const regionCurrencyMap = {
           US: "USD",
           GB: "GBP",
@@ -81,9 +84,15 @@ const Donate = () => {
           KE: "KES",  // Kenya
           ZA: "ZAR",  // South Africa
         };
-        setCurrency(regionCurrencyMap[region] || "USD");
+
+        // 3. Set currency based on the actual country, fallback to USD
+        if (regionCurrencyMap[region]) {
+          setCurrency(regionCurrencyMap[region]);
+        } else {
+          setCurrency("USD");
+        }
       } catch (err) {
-        console.error("Could not determine location:", err);
+        console.error("IP Geolocation failed, falling back to USD:", err);
         setCurrency("USD"); // fallback
       }
     };
@@ -216,7 +225,7 @@ const Donate = () => {
       <Layout>
         <div style={{ paddingTop: window.innerWidth < 768 ? '95px' : '130px', backgroundColor: '#001d23' }}></div>
 
-        <div className="container-fluid donate mb-5 py-5" style={{ backgroundImage: `url('img/pipe.jpg')`, backgroundAttachment: "fixed", backgroundSize: "cover" }}>
+        <div className="container-fluid donate mb-5 py-5" style={{ backgroundImage: `url('/img/pipe.jpg')`, backgroundAttachment: "fixed", backgroundSize: "cover" }}>
           <div className="container py-5">
             <div className="row g-5 align-items-start">
               {/* Left Side */}
