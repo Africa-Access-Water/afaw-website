@@ -6,7 +6,7 @@ const WorkInProgress = () => {
       {/* Logo */}
       <div className="mb-4">
         <img
-          src="/img/logos/afaw-logo-africa.png"
+          src="/img/logos/Updated/AFRICA_ACCESS_WATER_STACKED.png"
           alt="Africa Access Water Logo"
           className="img-fluid"
           style={{ maxHeight: "60px" }}
