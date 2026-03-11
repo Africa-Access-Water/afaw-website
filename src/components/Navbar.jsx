@@ -87,7 +87,7 @@ const Navbar = () => {
       >
         <Link to="/" className="navbar-brand ms-4 ms-lg-0">
           <img
-            src="/img/logos/afaw-logo-white.png"
+            src="/img/logos/Updated/AFRICA_ACCESS_WATER_STACKED.png"
             alt="afaw-logo-africa"
             className="img-fluid"
             style={{ width: "50px", height: "auto" }}
