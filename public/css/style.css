@@ -1,9 +1,9 @@
 /********** Template CSS **********/
 :root {
-  --primary: #1a76d1;
-  --secondary: #f7c01d;
+  --primary: #418FDE;
+  --secondary: #FFA300;
   --light: #f8f8f9;
-  --dark: #001d23;
+  --dark: #101820;
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
@@ -94,7 +94,7 @@
 }
 
 .preloader .loader .indicator svg polyline#front {
-  stroke: #1a76d1;
+  stroke: #418FDE;
   stroke-dasharray: 12, 36;
   stroke-dashoffset: 48;
   -webkit-animation: dash 1s linear infinite;
@@ -110,7 +110,7 @@
   height: 100%;
   width: 60%;
   z-index: -1;
-  background: #1a76d1;
+  background: #418FDE;
   -webkit-transition: 0.9s;
   transition: 0.9s;
 }
