@@ -120,7 +120,7 @@ function Home() {
 
     <div className="row g-4 justify-content-center align-items-stretch">
       <Stat icon="fa fa-solar-panel" number="10" text="Solar-powered water projects across 4 sites" />
-      <Stat icon="fa fa-users" number="6,000+" text="Households now food-secure with income" />
+      <Stat icon="fa fa-users" number="600+" text="Households now food-secure with income" />
       <Stat icon="fa fa-tint" number="30,000+" text="People & 2,500 animals with clean drinking water" />
       <Stat icon="fa fa-dollar-sign" number="$210,000+" text="Annual income from local produce" />
     </div>
