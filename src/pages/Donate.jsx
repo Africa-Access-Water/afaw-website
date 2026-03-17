@@ -18,7 +18,7 @@ const Donate = () => {
   const [customAmount, setCustomAmount] = useState("");
   const [showCustom, setShowCustom] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [donationType, setDonationType] = useState("recurring");
+  const [donationType, setDonationType] = useState("one_time");
   
   // ------------------------
   // Currency setup
@@ -460,7 +460,6 @@ const Donate = () => {
                     <div className="form-group row mb-3">
                       <div className="col-sm-6 mb-3 mb-sm-0">
                         <select name="donation_type" className="form-select" value={donationType} onChange={e => setDonationType(e.target.value)} required>
-                          <option value="">Donation Type</option>
                           <option value="one_time">One Time</option>
                           <option value="recurring">Recurring</option>
                         </select>
