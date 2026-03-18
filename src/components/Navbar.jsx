@@ -165,6 +165,9 @@ const Navbar = () => {
             <Link to="/team" className={`nav-item ${isActive("/team")}`}>
               Our Team
             </Link>
+            <Link to="/partners" className={`nav-item ${isActive("/partners")}`}>
+              Our Partners
+            </Link>
             <Link to="/blogs" className={`nav-item ${isActive("/posts")}`}>
               Blog
             </Link>

@@ -7,6 +7,7 @@ import VisionMissionObjectives from "../components/VisionMission";
 import CONFIG from "../config";
 import Stat from '../components/Stat';
 import Cause from '../components/Cause';
+import PartnerCarousel from "./PartnerCarousel";
 // import About from '../components/About';
 // import Objectives from "../components/Objectives";
 // import Sponsors from "../components/Sponsors";
@@ -175,6 +176,24 @@ function Home() {
                 </div>
 
                 <GetInvolved/>
+
+                {/* Partner Header Section */}
+                <div className="container-xxl py-5">
+                    <div className="container text-center">
+                    <h1 className="mb-3">Our Partners</h1>
+                    <p className="mb-4">
+                        We collaborate with organizations that share our vision of transforming
+                        communities and improving access to clean water across Africa.
+                    </p>
+                    </div>
+                </div>
+
+                {/* Carousel Section */}
+                <div className="container-xxl mb-5">
+                    <div className="container" >
+                        <PartnerCarousel />
+                    </div>
+                </div>
 
                 {/* Sponsors Section */}
                 {/* <Sponsors /> */}

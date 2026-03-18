@@ -16,6 +16,7 @@ import WhatWeDoPage from "./pages/WhatWeDo";
 import HowWeWork from "./pages/HowWeWork";
 import HowWeWorkPage from "./pages/HowWeWork";
 import LanguageSuggestion from "./components/LanguageSuggestion";
+import PartnersPage from './pages/PartnersPage';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="/donation/failure" element={<FailurePage />} />
         <Route path="/what-we-do" element={<WhatWeDoPage />} />
         <Route path="/how-we-work" element={<HowWeWorkPage />} />
+        <Route path="/partners" element={<PartnersPage />} />
 
 
         <Route path="*" element={<NotFound />} />
