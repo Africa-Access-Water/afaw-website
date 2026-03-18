@@ -49,7 +49,12 @@ const Footer = () => {
             </p>
             
 
-  
+              <img
+                src="/img/ngo.jpg"
+                alt="NGOSource-Verified-Logo"
+                className="img-fluid mb-3"
+                style={{ width: "250px", height: "auto" }}
+              />
 
             <div className="d-flex pt-2">
               <a className="btn btn-square me-2" href="https://www.facebook.com/share/1Go7XNJriP/?mibextid=wwXIfr"><i className="fab fa-facebook-f"></i></a>
