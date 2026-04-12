@@ -5,6 +5,7 @@ import CONFIG from "../config";
 import { Helmet } from "react-helmet";
 import { TbFileText } from "react-icons/tb";
 import { extractIdFromSlug, createSlugWithId } from "../utils/slugify";
+import { marked } from "marked";
 
 const API_BASE = CONFIG.apiBaseUrl;
 
@@ -219,12 +220,19 @@ const SingleProject = () => {
                   />
                 )}
 
-                {/* Project Description */}
+                {/* Project Description & Details */}
                 <div className="mt-4">
                   <h2 className="mb-3">About This Project</h2>
-                  <p className="lead" style={{ whiteSpace: "pre-wrap" }}>
-                    {project.description}
-                  </p>
+                  {project.details ? (
+                    <div 
+                      className="project-details-markdown"
+                      dangerouslySetInnerHTML={{ __html: marked.parse(project.details) }}
+                    />
+                  ) : (
+                    <p className="lead" style={{ whiteSpace: "pre-wrap" }}>
+                      {project.description}
+                    </p>
+                  )}
 
                   {project.location && (
                     <div className="mt-4">
