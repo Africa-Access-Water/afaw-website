@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { partnersData } from "../data/partnersData";
 
 const PartnerCarousel = () => {
-  const logos = [
-    "/img/partners/3.png",
-    "/img/partners/4.png",
-    "/img/partners/5.png",
-    "/img/partners/nmf.png",
-    "/img/partners/7.png",
-    "/img/partners/8.png",
-    "/img/partners/cej.jfif",
-    "/img/partners/10.png",
-    "/img/partners/stripe.png",
-  ];
+
+  const logos = [];
+
+  for (const partner of partnersData) {
+    logos.push(partner.logo);
+  }
 
   const allLogos = [...logos, ...logos];
 
