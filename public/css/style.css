@@ -948,3 +948,69 @@ body {
 
 
 
+
+/* Markdown Content Styling */
+.project-details-markdown, .post-content {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.8;
+  color: #333;
+}
+
+.project-details-markdown h1, .post-content h1,
+.project-details-markdown h2, .post-content h2,
+.project-details-markdown h3, .post-content h3 {
+  font-family: 'Saira', sans-serif;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #001d23;
+}
+
+.project-details-markdown h1, .post-content h1 { font-size: 2.25rem; }
+.project-details-markdown h2, .post-content h2 { font-size: 1.8rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+.project-details-markdown h3, .post-content h3 { font-size: 1.5rem; }
+
+.project-details-markdown p, .post-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.project-details-markdown ul, .post-content ul,
+.project-details-markdown ol, .post-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.project-details-markdown li, .post-content li {
+  margin-bottom: 0.5rem;
+}
+
+.project-details-markdown blockquote, .post-content blockquote {
+  border-left: 5px solid #00A1B5;
+  padding: 1rem 1.5rem;
+  background: #f9f9f9;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #555;
+}
+
+.project-details-markdown code, .post-content code {
+  background: #f4f4f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.project-details-markdown img, .post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.project-details-markdown hr, .post-content hr {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
