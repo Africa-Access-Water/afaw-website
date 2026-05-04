@@ -45,7 +45,7 @@ export const  partnersData = [
         id: 7,
         name: 'Ministry of Water Development and Sanitation',
         description: 'As the primary government body responsible for water service provision, the Ministry works in alignment with AfAW’s efforts to complement national service delivery. AfAW has partnered with the Ministry on initiatives such as the Water Economy Dialogue, which promotes water for productive use and positions water as a key economic driver.',
-        logo: '/img/partners/Ministry_of_Water_Logo'
+        logo: '/img/partners/Ministry_of_Water_Logo.png'
     },
 
     {
