@@ -44,21 +44,25 @@ const PartnersPage = () => {
       {/* Our Board Members */}
       <div className="container-xxl mt-5">
         <div className="container">
-          {/* <div className="text-center mx-auto mb-5" style={{ maxWidth: "600px" }}>
-            <h1 className="mb-3">Our Board Members</h1>
-          </div> */}
-            <div className="row g-4 mx-2 mx-md-0 mx-lg-1">
-              {partners.map((partner, index) => {
-                return (
+          <div className="row g-4 mx-2 mx-md-0 mx-lg-1">
+            {partners.map((partner, index) => {
+              return (
+                <a
+                  key={partner.id || index}
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                >
                   <PartnerCard 
-                    key={partner.id || index} 
                     name={partner.name}
-                    logo= {partner.logo || "/img/placeholders/profile.jpg"} 
+                    logo={partner.logo || "/img/placeholders/profile.jpg"} 
                     description={partner.description}
                   />
-                );
-              })}
-            </div>
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
 
