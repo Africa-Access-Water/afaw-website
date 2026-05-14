@@ -42,26 +42,24 @@ const PartnersPage = () => {
       </div> */}
 
       {/* Our Board Members */}
-      <div className="row g-4 mx-2 mx-md-0 mx-lg-1">
-        {partners.map((partner, index) => {
-          return (
-            <div className="col-6" key={partner.id || index}>
-              <a
-                href={partner.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-decoration-none d-block h-100"
-                style={{ color: "black" }}
-              >
-                <PartnerCard 
-                  name={partner.name}
-                  logo={partner.logo || "/img/placeholders/profile.jpg"} 
-                  description={partner.description}
-                />
-              </a>
+      <div className="container-xxl mt-5">
+        <div className="container">
+          {/* <div className="text-center mx-auto mb-5" style={{ maxWidth: "600px" }}>
+            <h1 className="mb-3">Our Board Members</h1>
+          </div> */}
+            <div className="row g-4 mx-2 mx-md-0 mx-lg-1">
+              {partners.map((partner, index) => {
+                return (
+                  <PartnerCard 
+                    key={partner.id || index} 
+                    name={partner.name}
+                    logo= {partner.logo || "/img/placeholders/profile.jpg"} 
+                    description={partner.description}
+                  />
+                );
+              })}
             </div>
-          );
-        })}
+        </div>
       </div>
 
     </Layout>
