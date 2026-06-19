@@ -27,7 +27,13 @@ const Projects = () => {
         if (!mounted) return;
         const arr = Array.isArray(data) ? data : [];
         setProjects(arr);
-        setFeaturedProject(arr.length ? arr[0] : null);
+        const visibleProjects = arr.filter(
+          (p) => p.type?.toLowerCase() !== "NotProject"
+        );
+
+        setFeaturedProject(
+          visibleProjects.length ? visibleProjects[0] : null
+        );
       })
       .catch(() => {
         if (!mounted) return;
@@ -42,10 +48,13 @@ const Projects = () => {
     return () => (mounted = false);
   }, []);
 
-  const filteredProjects =
+  const filteredProjects = projects
+  .filter((p) => p.type?.toLowerCase() !== "NotProject")
+  .filter((p) =>
     filter === "All"
-      ? projects
-      : projects.filter((p) => p.category?.toLowerCase() === filter.toLowerCase());
+      ? true
+      : p.category?.toLowerCase() === filter.toLowerCase()
+  );
 
   if (loading)
     return (
