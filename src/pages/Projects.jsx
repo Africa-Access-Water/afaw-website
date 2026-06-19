@@ -21,14 +21,17 @@ const Projects = () => {
   useEffect(() => {
     let mounted = true;
     setLoading(true);
+
     fetch(`${API_BASE}/api/projects`)
       .then((res) => res.json())
       .then((data) => {
         if (!mounted) return;
+
         const arr = Array.isArray(data) ? data : [];
         setProjects(arr);
+
         const visibleProjects = arr.filter(
-          (p) => p.type?.toLowerCase() !== "NotProject"
+          (p) => p.category?.toLowerCase() !== "notproject"
         );
 
         setFeaturedProject(
@@ -45,11 +48,13 @@ const Projects = () => {
         setLoading(false);
       });
 
-    return () => (mounted = false);
+    return () => {
+      mounted = false;
+    };
   }, []);
 
-  const filteredProjects = projects
-  .filter((p) => p.type?.toLowerCase() !== "NotProject")
+const filteredProjects = projects
+  .filter((p) => p.category?.toLowerCase() !== "notproject")
   .filter((p) =>
     filter === "All"
       ? true
