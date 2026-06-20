@@ -93,7 +93,7 @@ function Projects() {
                                 >
                                   <img
                                     src={img}
-                                    className="d-block w-100 vh-100"
+                                    className="d-block w-100 vh-60"
                                     alt={`${project.name}-img-${idx}`}
                                     style={{
                                       height: "220px",

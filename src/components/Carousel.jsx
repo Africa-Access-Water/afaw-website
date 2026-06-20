@@ -10,26 +10,27 @@ const Carousel = ({ slides, id = "header-carousel" }) => (
             key={idx}
             style={{ height: "100vh", overflow: "hidden" }}
           >
-            <img
-              className="w-100 h-100 carousel-img"
-              src={slide.img}
-              alt={slide.alt}
-              style={{ 
-                objectFit: "cover", 
-                objectPosition: "center",
-                height: "100vh",
-                width: "100%"
-              }}
-            />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet={slide.mobileImg}
+              />
+
+              <img
+                className="w-100 h-100 carousel-img"
+                src={slide.desktopImg}
+                alt={slide.alt}
+              />
+            </picture>
       {/* Responsive carousel styling */}
       <style>
         {`
           .carousel-item {
-            height: 100vh !important;
+            height: 70vh !important;
             overflow: hidden !important;
           }
           .carousel-img {
-            height: 100vh !important;
+            height: 70vh !important;
             width: 100% !important;
             object-fit: cover !important;
             object-position: center !important;
@@ -43,12 +44,14 @@ const Carousel = ({ slides, id = "header-carousel" }) => (
             display: flex;
             align-items: center;
             justify-content: center;
-          background: linear-gradient(to bottom, rgba(2, 51, 67, 0.65), rgba(14, 81, 99, 0.45));/* deep water blue overlay */   //Background opacity for the image
+            background: linear-gradient(
+  to bottom,
+  rgba(0, 0, 0, 0.25),
+  rgba(0, 0, 0, 0.15)
+);
             z-index: 5;
           }
-.carousel-caption .container {
-  margin-top: -10rem; /* move text down from the top */
-}
+
 
           .carousel-control-prev,
           .carousel-control-next {

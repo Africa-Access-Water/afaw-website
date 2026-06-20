@@ -8,6 +8,8 @@ import CONFIG from "../config";
 import Stat from '../components/Stat';
 import Cause from '../components/Cause';
 import PartnerCarousel from "./PartnerCarousel";
+import MobileWelcomeVideo from "../components/MobileWelcomeVideo";
+import WatchOurStoryCard from "../components/WatchOurStoryCard";
 // import About from '../components/About';
 // import Objectives from "../components/Objectives";
 // import Sponsors from "../components/Sponsors";
@@ -47,12 +49,14 @@ function Home() {
             </Helmet>
 
             <Layout title="Africa Access Water" description="Learn how Africa Access Water empowers rural Africa with solar-powered water systems.">
+                <MobileWelcomeVideo />
                 {/* Carousel Start */}
-                <section className="vh-100" style={{ overflow: "hidden" }}>
+                <section className="vh-50" style={{ overflow: "hidden" }}>
                     <Carousel
                         slides={[
                             {
-                                img: "img/hero2-2.jpg",
+                                desktopImg: "img/hero-desktop4.png",
+                                mobileImg: "img/hero-mobile.jpg",
                                 alt: "Rural Community with Water System",
                                 // Unique selling point of the organisation, a hook to peak the user’s curiosity to know what you do and how you do it in 3s
                                 title: "Clean Water Powered by the Sun ", 
@@ -75,7 +79,7 @@ function Home() {
                     />
                 </section>
                 {/* Carousel End */}
-
+                <WatchOurStoryCard />
                 <VisionMissionObjectives/>
 
                 {/*Stats Section*/} 

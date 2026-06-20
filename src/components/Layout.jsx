@@ -15,13 +15,13 @@ function Layout({ title, description, children }) {
     wowScript.onload = () => new window.WOW().init();
     document.body.appendChild(wowScript);
 
-    // Hide preloader after load
-    const preloader = document.getElementById("preloader");
-    if (preloader) {
-      setTimeout(() => {
-        preloader.style.display = "none";
-      }, 1000);
-    }
+    // // Hide preloader after load
+    // const preloader = document.getElementById("preloader");
+    // if (preloader) {
+    //   setTimeout(() => {
+    //     preloader.style.display = "none";
+    //   }, 1000);
+    // }
 
     
   }, [location]);
@@ -30,15 +30,15 @@ function Layout({ title, description, children }) {
     <>
      
       {/* Preloader */}
-      <div className="preloader" id="preloader">
+      {/* <div className="preloader" id="preloader">
         <div className="loader">
           <div className="loader-outter"></div>
           <div className="loader-inner"></div>
           <div className="indicator">
-            <img src="/img/logos/Updated/AFRICA_ACCESS_WATER_STACKED.png" width="40px" alt="AfAW Logo" />
+            <img src="/img/logos/Updated/AFRICA_ACCESS_WATER_ICON_ONLY.png" className="preloader-logo" alt="AfAW Logo" />
           </div>
         </div>
-      </div>
+      </div> */}
 
       <Navbar />
       {/* <GoogleTranslate/> */}
@@ -52,9 +52,9 @@ function Layout({ title, description, children }) {
       <Footer />
 
       {/* Scroll to Top */}
-      <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top">
+      {/* <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top">
         <i className="bi bi-arrow-up"></i>
-      </a>
+      </a> */}
     </>
   );
 }
