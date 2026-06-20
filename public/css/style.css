@@ -419,7 +419,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #999999;
 }
 
-
+.mb-3-vid {
+  color:white
+}
 
 /*** Causes ***/
 .causes-item .progress {
@@ -1020,12 +1022,7 @@ body {
   border-top: 1px solid #eee;
 }
 
-.video-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  background: #000;
-}
+
 
 .video-player {
   width: 100%;
@@ -1091,8 +1088,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background: rgba(0, 0, 0, 0.8);
   }
 
   .video-player {
@@ -1100,8 +1095,41 @@ body {
     height: 85vh;
     max-width: 450px;
     border-radius: 12px;
+    transform: translateY(-2rem);
   }
 
+}
+
+@media (max-width: 769px) {
+  .video-overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) {
+
+  .video-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .video-player {
+    
+    height: auto;
+    max-width:95vw;
+    border-radius: 12px;
+    transform: translateY(-5rem);
+  }
+
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 .watch-story-card {
   background-color: #418FDE;
@@ -1114,16 +1142,17 @@ body {
   color: white;
 }
 .video-overlay {
+
   position: fixed;
   inset: 0;
   z-index: 999999;
-
-  background: #000;
-
   display: flex;
+  background: rgba(0, 0, 0, 0.95);
   justify-content: center;
+  
   align-items: center;
 }
+
 
 .video-cta-btn {
   min-height: 50px;

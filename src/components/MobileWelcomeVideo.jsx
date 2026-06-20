@@ -40,7 +40,7 @@ export default function MobileWelcomeVideo({
 
     const timer = setTimeout(() => {
       setShowControls(true);
-    }, 1500);
+    }, 0);
 
     return () => clearTimeout(timer);
   }, [visible]);
@@ -114,7 +114,7 @@ export default function MobileWelcomeVideo({
       {videoEnded && (
         <div className="video-end-screen">
 
-          <h2 className="mb-3">
+          <h2 className="mb-3-vid">
             Help Bring Clean Water to More Communities
           </h2>
 
