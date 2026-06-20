@@ -36,7 +36,7 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6">
             <Link to="/" className="navbar-brand ms-4 ms-lg-0">
               <img
-                src="/img/logos/Updated/AFRICA_ACCESS_WATER_STACKED.png"
+                src="/img/logos/Updated/AFRICA_ACCESS_WATER_ICON_ONLY.png"
                 alt="afaw-logo-africa"
                 className="img-fluid mb-3"
                 style={{ width: "55px", height: "auto" }}

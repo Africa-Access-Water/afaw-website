@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 const STORAGE_KEY = "afaw_intro_video_seen";
 const FOURTEEN_DAYS = 14 * 24 * 60 * 60 * 1000;
+const ONE_HOUR=60 * 60 * 1000;
+const ONE_SECOND= 1000;
 
 export default function MobileWelcomeVideo({
-  forceShow = true,
+  forceShow = false,
   onClose = null,
 }) {
   const videoRef = useRef(null);
@@ -16,7 +18,7 @@ export default function MobileWelcomeVideo({
 
   const isMobile = window.innerWidth <= 768;
 
-  if (!isMobile) return false;
+//   if (!isMobile) return false;
 
   const lastSeen = localStorage.getItem(STORAGE_KEY);
 
@@ -24,7 +26,7 @@ export default function MobileWelcomeVideo({
 
   return (
     Date.now() - parseInt(lastSeen, 10) >
-    FOURTEEN_DAYS
+    ONE_HOUR
   );
 });
   const [showControls, setShowControls] = useState(false);
