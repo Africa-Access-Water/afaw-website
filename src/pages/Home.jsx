@@ -55,8 +55,8 @@ function Home() {
                     <Carousel
                         slides={[
                             {
-                                desktopImg: "img/hero-desktop4.png",
-                                mobileImg: "img/hero-mobile.jpg",
+                                desktopImg: "img-optimized/hero-desktop4.png",
+                                mobileImg: "img-optimized/hero-mobile.jpg",
                                 alt: "Rural Community with Water System",
                                 // Unique selling point of the organisation, a hook to peak the user’s curiosity to know what you do and how you do it in 3s
                                 title: "Clean Water Powered by the Sun ", 
@@ -67,7 +67,7 @@ function Home() {
                             },
                             // ###Only one item on corousal needed for now
                             // {
-                            //     img: "img/about.jpg",
+                            //     img: "img-optimized/about.jpg",
                             //     alt: "Women Empowerment in Agriculture",
                             //     title: "Water is Life. Empowerment is Impact.",
                             //     desc:

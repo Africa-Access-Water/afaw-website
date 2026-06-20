@@ -32,7 +32,7 @@ const WhyWeExist = () => {
             className="order-2 order-lg-1"
           >
             <Image
-              src="/img/wwd3.jpg"
+              src="/img-optimized/wwd3.jpg"
               alt="Community Partnership"
               fluid
               rounded

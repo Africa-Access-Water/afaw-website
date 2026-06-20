@@ -6,8 +6,8 @@ const About = ({ image, smallImage, title, quote, description, buttons }) => {
          {/* <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">About Us</div> */}
         {/* <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
             <div className="position-relative overflow-hidden h-100" style={{ minHeight: "400px" }}>
-                <img className="position-absolute w-100 h-100 pt-5 pe-5" src="img/solar1-1.jpeg" alt="Solar Water Project" style={{ objectFit: "cover" }} />
-                <img className="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="img/happy-produce.jpg" alt="Women Farmers" style={{ width: "200px", height: "200px" }} />
+                <img className="position-absolute w-100 h-100 pt-5 pe-5" src="img-optimized/solar1-1.jpeg" alt="Solar Water Project" style={{ objectFit: "cover" }} />
+                <img className="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="img-optimized/happy-produce.jpg" alt="Women Farmers" style={{ width: "200px", height: "200px" }} />
             </div>
         </div> */}
          <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">

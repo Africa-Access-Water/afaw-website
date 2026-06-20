@@ -7,7 +7,7 @@ export default function FailurePage() {
     <section className="position-relative text-center">
       {/* Background image */}
       <img
-        src="/img/carousel-2.jpg" 
+        src="/img-optimized/carousel-2.jpg" 
         alt="Donation failed"
         className="img-fluid w-100"
         style={{

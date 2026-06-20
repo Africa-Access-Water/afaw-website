@@ -35,7 +35,7 @@ function Layout({ title, description, children }) {
           <div className="loader-outter"></div>
           <div className="loader-inner"></div>
           <div className="indicator">
-            <img src="/img/logos/Updated/AFRICA_ACCESS_WATER_ICON_ONLY.png" className="preloader-logo" alt="AfAW Logo" />
+            <img src="/img-optimized/logos/Updated/AFRICA_ACCESS_WATER_ICON_ONLY.png" className="preloader-logo" alt="AfAW Logo" />
           </div>
         </div>
       </div> */}

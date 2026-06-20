@@ -13,7 +13,7 @@ const CommunityPartnership = () => {
             className="order-2 order-lg-1"
           >
             <Image
-              src="/img/community4.jpg"
+              src="/img-optimized/community4.jpg"
               alt="Community Partnership"
               fluid
               rounded

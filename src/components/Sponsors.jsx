@@ -3,16 +3,16 @@ import React from 'react';
 const Sponsors = ({ sponsors = [] }) => {
     // Default sponsor logos with placeholders
     const defaultSponsors = [
-        { id: 1, name: "Sponsor 1", logo: "/img/sponsor1.png" },
-        { id: 2, name: "Sponsor 2", logo: "/img/sponsor2.png" },
-        { id: 3, name: "Sponsor 3", logo: "/img/sponsor3.png" },
-        { id: 4, name: "Sponsor 4", logo: "/img/sponsor4.png" },
-        { id: 5, name: "Sponsor 5", logo: "/img/sponsor5.png" },
-        { id: 6, name: "Sponsor 6", logo: "/img/sponsor6.png" },
-        { id: 7, name: "Sponsor 7", logo: "/img/sponsor7.png" },
-        { id: 8, name: "Sponsor 8", logo: "/img/sponsor8.png" },
-        { id: 9, name: "Sponsor 9", logo: "/img/sponsor9.png" },
-        { id: 10, name: "Sponsor 10", logo: "/img/sponsor10.png" },
+        { id: 1, name: "Sponsor 1", logo: "/img-optimized/sponsor1.png" },
+        { id: 2, name: "Sponsor 2", logo: "/img-optimized/sponsor2.png" },
+        { id: 3, name: "Sponsor 3", logo: "/img-optimized/sponsor3.png" },
+        { id: 4, name: "Sponsor 4", logo: "/img-optimized/sponsor4.png" },
+        { id: 5, name: "Sponsor 5", logo: "/img-optimized/sponsor5.png" },
+        { id: 6, name: "Sponsor 6", logo: "/img-optimized/sponsor6.png" },
+        { id: 7, name: "Sponsor 7", logo: "/img-optimized/sponsor7.png" },
+        { id: 8, name: "Sponsor 8", logo: "/img-optimized/sponsor8.png" },
+        { id: 9, name: "Sponsor 9", logo: "/img-optimized/sponsor9.png" },
+        { id: 10, name: "Sponsor 10", logo: "/img-optimized/sponsor10.png" },
     ];
 
     const sponsorList = sponsors.length > 0 ? sponsors : defaultSponsors;
@@ -48,7 +48,7 @@ const Sponsors = ({ sponsors = [] }) => {
                 <div className="text-center mt-5 pt-4">
                     <div className="ngo-certification">
                         <img 
-                            src="/img/ngo.jpg" 
+                            src="/img-optimized/ngo.jpg" 
                             alt="NGO Source Equivalency Determination" 
                             className="ngosource-logo"
                         />

@@ -225,7 +225,7 @@ const Donate = () => {
       <Layout>
         <div style={{ paddingTop: window.innerWidth < 768 ? '95px' : '130px', backgroundColor: '#001d23' }}></div>
 
-        <div className="container-fluid donate mb-5 py-5" style={{ backgroundImage: `url('/img/pipe.jpg')`, backgroundAttachment: "fixed", backgroundSize: "cover" }}>
+        <div className="container-fluid donate mb-5 py-5" style={{ backgroundImage: `url('/img-optimized/pipe.jpg')`, backgroundAttachment: "fixed", backgroundSize: "cover" }}>
           <div className="container py-5">
             <div className="row g-5 align-items-start">
               {/* Left Side */}
@@ -423,7 +423,7 @@ const Donate = () => {
               <div className="col-lg-6">
                 <div className="h-100 bg-white p-5 rounded shadow-sm text-center">
                   <Link to="/" className="d-flex justify-content-center mb-4">
-                    <img src="/img/logos/afaw-logo-black.png" alt="afaw-logo-africa" className="img-fluid" style={{ width: "40px", height: "auto" }} />
+                    <img src="/img-optimized/logos/afaw-logo-black.png" alt="afaw-logo-africa" className="img-fluid" style={{ width: "40px", height: "auto" }} />
                   </Link>
                   {/* Tag */}
                   <div className="d-inline-block rounded-pill bg-primary text-white py-2 px-4 mb-4 shadow-sm">

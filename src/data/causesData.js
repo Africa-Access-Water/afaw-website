@@ -7,7 +7,7 @@ export const causes = [
     goal: 15000,
     raised: 11200,
     tag: "Water Access",
-    img: "img/solar.jpg",
+    img: "img-optimized/solar.jpg",
     alt: "Solar water pump project",
   },
   {
@@ -18,7 +18,7 @@ export const causes = [
     goal: 12000,
     raised: 9000,
     tag: "Women Empowerment",
-    img: "img/irrigated.jpeg",
+    img: "img-optimized/irrigated.jpeg",
     alt: "Women farming project",
   },
   {
@@ -29,7 +29,7 @@ export const causes = [
     goal: 8000,
     raised: 6400,
     tag: "Youth Training",
-    img: "img/irrigated 1.jpg",
+    img: "img-optimized/irrigated 1.jpg",
     alt: "Youth technical training",
   },
 ];

@@ -71,7 +71,7 @@ const Navbar = () => {
             href="https://www.tiktok.com/@africaaccesswater"
           >
             <img
-              src="/img/tik-tok.png"
+              src="/img-optimized/tik-tok.png"
               alt="TikTok"
               width="14"
               height="14"
@@ -87,7 +87,7 @@ const Navbar = () => {
       >
         <Link to="/" className="navbar-brand ms-4 ms-lg-0">
           <img
-            src="/img/logos/Updated/AFRICA_ACCESS_WATER_ICON_ONLY.png"
+            src="/img-optimized/logos/Updated/AFRICA_ACCESS_WATER_ICON_ONLY.png"
             alt="afaw-logo-africa"
             className="img-fluid"
             style={{ width: "50px", height: "auto" }}

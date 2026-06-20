@@ -5,7 +5,7 @@ const actions = [
   {
     id: 1,
     title: "Donate Monthly",
-    img: "/img/give.jpg",
+    img: "/img-optimized/give.jpg",
     desc: "Become a Water Champion! Your steady support keeps water flowing and projects sustainable all year long.",
     btnText: "Join the Flow →",
     link: "/donate",
@@ -13,7 +13,7 @@ const actions = [
   // {
   //   id: 2,
   //   title: "Fundraise",
-  //   img: "/img/project-2.jpg",
+  //   img: "/img-optimized/project-2.jpg",
   //   desc: "Turn your birthday, a race, or an event into clean water for an entire village. Every story fuels change.",
   //   btnText: "Start a Campaign →",
   //   link: "/contact",
@@ -21,7 +21,7 @@ const actions = [
   {
     id: 3,
     title: "Partner With Us",
-    img: "/img/partner.jpg",
+    img: "/img-optimized/partner.jpg",
     desc: "Join hands with our team to bring sustainable water systems to remote communities across Africa.",
     btnText: "Collaborate →",
     link: "/contact",
@@ -29,7 +29,7 @@ const actions = [
   {
     id: 4,
     title: "Volunteer Your Skills",
-    img: "/img/price-4.jpg",
+    img: "/img-optimized/price-4.jpg",
     desc: "Engineers, storytellers, designers. Everyone has a role to play in changing lives through water.",
     btnText: "Join the Network →",
     link: "/contact",
@@ -37,7 +37,7 @@ const actions = [
   {
     id: 5,
     title: "Share & Follow",
-    img: "/img/howitworks.jpg",
+    img: "/img-optimized/howitworks.jpg",
     desc: "Help us spread the word. Follow our journey and share our mission. Every post can reach a heart and inspire action.",
     socials: [
       { icon: "fab fa-facebook-f", link: "https://www.facebook.com/share/1Go7XNJriP/?mibextid=wwXIfr" },

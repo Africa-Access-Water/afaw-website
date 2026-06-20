@@ -63,7 +63,7 @@ const SuccessPage = () => {
         {/* Hero Section */}
         <section className="position-relative text-white text-center">
           <img
-            src="/img/IMG-20240418-WA0094.jpg"
+            src="/img-optimized/IMG-20240418-WA0094.jpg"
             alt="Clean water flowing"
             className="img-fluid w-100"
             style={{
@@ -133,22 +133,22 @@ const SuccessPage = () => {
             <div className="row g-4">
               {[
                 {
-                  img: "/img/carousel-1.jpg",
+                  img: "/img-optimized/carousel-1.jpg",
                   text: "“My children no longer walk long distances for water. They are healthier, and I have time to farm and care for my family. AfAW has given us life and dignity back.”",
                   author: "A Mother’s Voice",
                 },
                 {
-                  img: "/img/potato.jpg",
+                  img: "/img-optimized/potato.jpg",
                   text: "“With solar irrigation, I now farm all year and sell my produce at the market. I am not just a farmer — I am a businesswoman. AfAW has empowered us women to stand on our own feet.”",
                   author: "A Young Woman Farmer",
                 },
                 {
-                  img: "/img/about1.jpg",
+                  img: "/img-optimized/about1.jpg",
                   text: "“AfAW gave us more than water. They trained us to sustain it, and now we have clean water, better harvests, and small businesses. They brought hope for a better future.”",
                   author: "Community Leader",
                 },
                 {
-                  img: "/img/irrigated 1.jpg",
+                  img: "/img-optimized/irrigated 1.jpg",
                   text: "“I never thought I’d see clean water here in my lifetime. Now I fetch it near my home, and my grandchildren grow up healthy. AfAW has truly blessed our community.”",
                   author: "A Grandmother’s Reflection",
                 },

@@ -9,7 +9,7 @@ import CommunityPartnership from '../components/CommunityPartnership';
 const sections = [
     {
         title: "Water Infrastructure Development in Rural Communities",
-        image: "/img/wwd1.jpg",
+        image: "/img-optimized/wwd1.jpg",
         content: (
             <>
                 <p className="text-muted mb-2">
@@ -26,7 +26,7 @@ const sections = [
     },
     {
         title: "Community Empowerment & Agriculture",
-        image: "/img/wwd2.jpg",
+        image: "/img-optimized/wwd2.jpg",
         content: (
             <>
                 <p className="text-muted mb-2">
@@ -43,7 +43,7 @@ const sections = [
     },
     {
         title: "Measuring Impact & Growth",
-        image: "/img/wwd3.jpg",
+        image: "/img-optimized/wwd3.jpg",
         content: (
             <>
                 <p className="text-muted mb-2">
@@ -60,7 +60,7 @@ const sections = [
     },
     {
         title: "Research, Advocacy & Partnerships",
-        image: "/img/wwd4.jpg",
+        image: "/img-optimized/wwd4.jpg",
         content: (
             <>
                 <p className="text-muted mb-2">
@@ -90,7 +90,7 @@ const HowWeWorkPage = () => {
         <div>
           <section className="position-relative text-white text-center">
           <img
-             src="/img/howitworks1.jpg"
+             src="/img-optimized/howitworks1.jpg"
             alt="Clean water flowing"
             className="img-fluid w-100 impact-img"
             style={{
@@ -130,7 +130,7 @@ const HowWeWorkPage = () => {
                             style={{ maxWidth: '800px', margin: '0 auto' }}
                         >
                             {/* <img
-                                src="/img/howitworks1.jpg"
+                                src="/img-optimized/howitworks1.jpg"
                                 alt="Community working together on water infrastructure project"
                                 className="img-fluid w-100"
                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}

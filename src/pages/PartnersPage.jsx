@@ -53,7 +53,7 @@ const PartnersPage = () => {
                   <PartnerCard 
                     key={partner.id || index} 
                     name={partner.name}
-                    logo= {partner.logo || "/img/placeholders/profile.jpg"} 
+                    logo= {partner.logo || "/img-optimized/placeholders/profile.jpg"} 
                     description={partner.description}
                   />
                 );

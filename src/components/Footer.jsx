@@ -36,7 +36,7 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6">
             <Link to="/" className="navbar-brand ms-4 ms-lg-0">
               <img
-                src="/img/logos/Updated/AFRICA_ACCESS_WATER_ICON_ONLY.png"
+                src="/img-optimized/logos/Updated/AFRICA_ACCESS_WATER_ICON_ONLY.png"
                 alt="afaw-logo-africa"
                 className="img-fluid mb-3"
                 style={{ width: "55px", height: "auto" }}
@@ -50,7 +50,7 @@ const Footer = () => {
             
 
               <img
-                src="/img/ngo.jpg"
+                src="/img-optimized/ngo.jpg"
                 alt="NGOSource-Verified-Logo"
                 className="img-fluid mb-3"
                 style={{ width: "250px", height: "auto" }}
@@ -64,7 +64,7 @@ const Footer = () => {
               <a className="btn btn-square me-2" href="https://youtube.com/@africaaccesswater"><i className="fab fa-youtube"></i></a>
               <a className="btn btn-square me-0" href="https://www.tiktok.com/@africaaccesswater">
                 <img
-                  src="/img/tik-tok.png"
+                  src="/img-optimized/tik-tok.png"
                   alt="TikTok"
                   width="14"
                   height="14"

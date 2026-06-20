@@ -18,7 +18,7 @@ function AboutPage() {
 
         <section className="position-relative text-white text-center">
           <img
-             src="/img/solar1-1.jpeg"
+             src="/img-optimized/solar1-1.jpeg"
             alt="Clean water flowing"
             className="img-fluid w-100 impact-img"
             style={{

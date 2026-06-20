@@ -45,8 +45,8 @@ const VisionMissionObjectives = () => {
             {/* image to show the change- like a before and after. */}
              <div className="mt-4 wow fadeInUp" data-wow-delay="0.1s">
             <div className="position-relative overflow-hidden h-100" style={{ minHeight: "400px" }}>
-                <img className="position-absolute w-100 h-100 pt-5 pe-5" src="img/irrigated 1.jpg" alt="Solar Water Project" style={{ objectFit: "cover" }} />
-                <img className="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="img/about.jpg" alt="Women Farmers" style={{ width: "200px", height: "200px" }} />
+                <img className="position-absolute w-100 h-100 pt-5 pe-5" src="img-optimized/irrigated 1.jpg" alt="Solar Water Project" style={{ objectFit: "cover" }} />
+                <img className="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="img-optimized/about.jpg" alt="Women Farmers" style={{ width: "200px", height: "200px" }} />
             </div>
         </div>
             {/* commented this section out as it should be in 'about us' section. helps improve flows and reduce load on homepage.  */}

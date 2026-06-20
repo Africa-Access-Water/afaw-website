@@ -27,8 +27,8 @@ const WhatWeDoPage = () => {
 
        <section className="position-relative text-white text-center">
           <img
-            // src="/img/IMG-20240418-WA0094.jpg"
-             src="/img/hero.jpg"
+            // src="/img-optimized/IMG-20240418-WA0094.jpg"
+             src="/img-optimized/hero.jpg"
             alt="Clean water flowing"
             className="img-fluid w-100 impact-img"
             style={{

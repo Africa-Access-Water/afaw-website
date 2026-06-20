@@ -4,7 +4,7 @@ import WhatWeDoCard from './WhatWeDoCard';
 const WhatWeDo = () => {
     const whatWeDoData = [
         {
-            image: "/img/wwd1.jpg",
+            image: "/img-optimized/wwd1.jpg",
             title: "Water Infrastructure Development in Rural Communities",
             // content: (
             //     <div>
@@ -61,7 +61,7 @@ const WhatWeDo = () => {
 
         },
         {
-            image: "/img/wwd2.jpg",
+            image: "/img-optimized/wwd2.jpg",
             title: "Promote Water-Energy-Agricultural Productivity, Food Security & Income",
             // content: (
             //     <div>
@@ -157,7 +157,7 @@ content: (
 
         },
         {
-            image: "/img/wwd3.jpg",
+            image: "/img-optimized/wwd3.jpg",
             title: "Measuring Water Impact on Livelihoods",
             // content: (
             //     <div>
@@ -219,7 +219,7 @@ content: (
 
         },
         {
-            image: "/img/wwd4.jpg",
+            image: "/img-optimized/wwd4.jpg",
             title: "Research and Advocacy",
             // content: (
             //     <div>

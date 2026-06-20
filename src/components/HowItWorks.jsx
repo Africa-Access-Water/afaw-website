@@ -18,7 +18,7 @@ const HowItWorks = () => {
                             style={{ maxWidth: '450px', margin: '0 auto' }}
                         >
                             <img
-                                src="/img/howitworks.jpg"
+                                src="/img-optimized/howitworks.jpg"
                                 alt="Community working together on water infrastructure project"
                                 className="img-fluid"
                                 style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
@@ -31,7 +31,7 @@ const HowItWorks = () => {
                 </div>
                 <div className="d-flex justify-content-center">
                     <img
-                        src="/img/canvas1.png"
+                        src="/img-optimized/canvas1.png"
                         alt="Community working together on water infrastructure project"
                         className="img-fluid"
                         style={{ width: '90%', height: 'auto', objectFit: 'cover' }}
