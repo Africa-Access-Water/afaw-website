@@ -31,7 +31,7 @@ const Projects = () => {
         setProjects(arr);
 
         const visibleProjects = arr.filter(
-          (p) => p.category?.toLowerCase() !== "notproject"
+          (p) => p.category?.toLowerCase() !== "voyaqua"
         );
 
         setFeaturedProject(
@@ -54,7 +54,7 @@ const Projects = () => {
   }, []);
 
 const filteredProjects = projects
-  .filter((p) => p.category?.toLowerCase() !== "notproject")
+  .filter((p) => p.category?.toLowerCase() !== "voyaqua")
   .filter((p) =>
     filter === "All"
       ? true

@@ -301,9 +301,10 @@ const Donate = () => {
                                       alt={`media-${idx}`}
                                       className="d-block w-100"
                                       style={{
-                                        height: "320px",
-                                        objectFit: "cover",
-                                        objectPosition: "center",
+                                           height: "400px",
+                                            objectFit: "contain",
+                                            objectPosition: "center",
+                                            backgroundColor: "#f8f9fa",
                                       }}
                                     />
                                   </div>

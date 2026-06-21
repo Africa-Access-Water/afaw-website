@@ -33,7 +33,20 @@ export default function MobileWelcomeVideo({
   const [videoEnded, setVideoEnded] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(false);
 
-  
+  useEffect(() => {
+  if (visible) {
+    document.body.classList.add("video-open");
+    document.documentElement.classList.add("video-open");
+  } else {
+    document.body.classList.remove("video-open");
+    document.documentElement.classList.remove("video-open");
+  }
+
+  return () => {
+    document.body.classList.remove("video-open");
+    document.documentElement.classList.remove("video-open");
+  };
+}, [visible]);
 
   useEffect(() => {
     if (!visible) return;
@@ -72,8 +85,9 @@ export default function MobileWelcomeVideo({
   if (!visible) return null;
 
   return (
+    
     <div className="video-overlay">
-
+        
       <video
         ref={videoRef}
         className="video-player"
@@ -109,6 +123,7 @@ export default function MobileWelcomeVideo({
           </button>
 
         </div>
+        
       )}
 
       {videoEnded && (
